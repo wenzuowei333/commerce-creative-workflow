@@ -32,6 +32,8 @@ dramatiq==1.18.0
     # via commerce-creative-workflow-backend (backend/pyproject.toml)
 fastapi==0.139.2
     # via commerce-creative-workflow-backend (backend/pyproject.toml)
+greenlet==3.5.6
+    # via commerce-creative-workflow-backend (backend/pyproject.toml)
 h11==0.16.0
     # via
     #   httpcore

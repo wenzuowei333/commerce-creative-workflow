@@ -13,6 +13,9 @@ from app.core.errors import AppError
 from app.media import MediaStore
 from app.providers import AIProvider, ReferenceImage
 from app.services.generation_events import add_event
+from app.services.generation_limits import ensure_daily_capacity
+from app.services.workflow_lock import workflow_lock
+from app.demo_provider import before_demo_generation
 
 
 class LeaseHeartbeat:
@@ -22,8 +25,8 @@ class LeaseHeartbeat:
         *,
         item_id: str,
         lease_token: str,
-        lease_seconds: int,
-        heartbeat_seconds: int,
+        lease_seconds: float,
+        heartbeat_seconds: float,
     ) -> None:
         self.bind = db.get_bind()
         self.item_id = item_id
@@ -42,6 +45,7 @@ class LeaseHeartbeat:
                         models.GenerationItem.id == self.item_id,
                         models.GenerationItem.state == "generating",
                         models.GenerationItem.lease_token == self.lease_token,
+                        models.GenerationItem.lease_expires_at > datetime.now(UTC),
                     )
                     .values(
                         lease_expires_at=datetime.now(UTC) + timedelta(seconds=self.lease_seconds)
@@ -146,147 +150,113 @@ def process_item(
     references: list[ReferenceImage] | None = None,
     quality: str | None = None,
     output_format: str | None = None,
-) -> None:
+) -> bool:
+    """Adapted source execution: CAS claim and fenced terminal writes.
+
+    The short global lock orders claim/recovery/refresh mutations. No database
+    transaction stays open during Provider generation. A stale owner never
+    inserts an ImageAsset, updates the item or clears a replacement's lease.
+    """
+    item_id = item.id
+    workflow_lock(db)
+    db.refresh(item)
     if item.state != "queued":
-        return
+        db.rollback()
+        return False
     batch = db.get(models.GenerationBatch, item.batch_id)
     plan = db.get(models.PromptPlan, batch.prompt_plan_id) if batch else None
     if not batch or not plan:
-        raise AppError(
-            code="generation_context_missing",
-            message="生成任务上下文不存在",
-            status_code=409,
-        )
-
-    lease_token = hashlib.sha256(
-        f"{item.id}:{request_id}:{datetime.now(UTC).isoformat()}".encode()
-    ).hexdigest()
+        db.rollback()
+        raise AppError(code="generation_context_missing", message="生成任务上下文不存在", status_code=409)
+    lease_token = hashlib.sha256(f"{item.id}:{request_id}:{datetime.now(UTC).isoformat()}".encode()).hexdigest()
     claim = db.execute(
         update(models.GenerationItem)
-        .where(
-            models.GenerationItem.id == item.id,
-            models.GenerationItem.state == "queued",
-        )
-        .values(
-            state="generating",
-            attempts=models.GenerationItem.attempts + 1,
-            retryable=False,
-            error_code=None,
-            error_message=None,
-            lease_token=lease_token,
-            lease_expires_at=datetime.now(UTC)
-            + timedelta(seconds=settings.generation_lease_seconds),
-            started_at=datetime.now(UTC),
-            completed_at=None,
-        )
+        .where(models.GenerationItem.id == item_id, models.GenerationItem.state == "queued")
+        .values(state="generating", attempts=models.GenerationItem.attempts + 1,
+                retryable=False, error_code=None, error_message=None, lease_token=lease_token,
+                lease_expires_at=datetime.now(UTC) + timedelta(seconds=settings.generation_lease_seconds),
+                started_at=datetime.now(UTC), completed_at=None)
         .execution_options(synchronize_session=False)
     )
     if claim.rowcount != 1:
         db.rollback()
-        return
-    db.commit()
+        return False
     db.refresh(item)
+    generation = item.attempts
+    batch_id = batch.id
     if item.kind == "initial":
         batch.state = "generating"
-    db.add(
-        models.UsageLedger(
-            usage_date=date.today(),
-            operation="image_generation",
-            model=settings.image_model,
-            units=1,
-            request_id=request_id,
-        )
-    )
-    add_event(
-        db,
-        batch.id,
-        "item_generating",
-        "generating",
-        {"item_id": item.id, "attempt": item.attempts},
-    )
+    error = None
+    try:
+        ensure_daily_capacity(db, settings, 1)
+        db.add(models.UsageLedger(usage_date=datetime.now(UTC).date(), operation="image_generation",
+                                 model=settings.image_model, units=1, request_id=request_id))
+    except AppError as exc:
+        error = exc
+    add_event(db, batch_id, "item_generating", "generating",
+              {"item_id": item_id, "attempt": generation, "request_id": request_id})
     db.commit()
 
-    heartbeat = LeaseHeartbeat(
-        db,
-        item_id=item.id,
-        lease_token=lease_token,
-        lease_seconds=settings.generation_lease_seconds,
-        heartbeat_seconds=settings.generation_heartbeat_seconds,
-    )
+    heartbeat = LeaseHeartbeat(db, item_id=item_id, lease_token=lease_token,
+        lease_seconds=settings.generation_lease_seconds, heartbeat_seconds=settings.generation_heartbeat_seconds)
     heartbeat.start()
+    content = None
     try:
-        source_images = references or reference_images(db, batch.product_id, media_store)
-        size, active_quality, active_format = generation_parameters(
-            plan,
-            quality=quality,
-            output_format=output_format,
-        )
-        content = provider.generate_image(
-            prompt=item.prompt,
-            images=source_images,
-            size=size,
-            quality=active_quality,
-            output_format=active_format,
-        )
-        width, height = validate_generated_image(content)
-        image = models.ImageAsset(
-            product_id=batch.product_id,
-            batch_id=batch.id,
-            generation_item_id=item.id,
-            object_key="pending",
-            format=active_format,
-            width=width,
-            height=height,
-            quality=active_quality,
-            sha256=hashlib.sha256(content).hexdigest(),
-        )
+        if error is None:
+            source_images = references or reference_images(db, batch.product_id, media_store)
+            # Freeze settings at batch creation instead of reading a later edited plan.
+            snapshot = batch.plan_snapshot_json or plan.plan_json
+            size = str(snapshot.get("size", "1024x1024"))
+            active_quality = quality or str(snapshot.get("quality", "medium"))
+            active_format = output_format or "webp"
+            prompt = item.prompt
+            before_demo_generation(settings, batch, item)
+            db.commit()  # Release reference-read transaction before Provider call.
+            content = provider.generate_image(prompt=prompt, images=source_images, size=size,
+                quality=active_quality, output_format=active_format)
+            width, height = validate_generated_image(content)
+    except AppError as exc:
+        error = exc
+    except Exception:
+        error = AppError(code="generation_unexpected_error", message="图片生成失败，请稍后重试", retryable=True, status_code=502)
+    finally:
+        heartbeat.stop()
+        db.rollback()
+
+    workflow_lock(db)
+    owned = db.scalar(select(models.GenerationItem).where(
+        models.GenerationItem.id == item_id, models.GenerationItem.state == "generating",
+        models.GenerationItem.lease_token == lease_token, models.GenerationItem.attempts == generation,
+        models.GenerationItem.lease_expires_at > datetime.now(UTC),
+    ).with_for_update().execution_options(populate_existing=True))
+    if owned is None:
+        add_event(db, batch_id, "stale_result_rejected", "unchanged",
+                  {"item_id": item_id, "rejected_attempt": generation, "request_id": request_id})
+        db.commit()
+        return False
+    if error is not None:
+        owned.state = "failed"
+        owned.error_code = error.code
+        owned.error_message = error.message
+        owned.retryable = error.retryable
+        add_event(db, batch_id, "item_failed", "generating",
+                  {"item_id": item_id, "attempt": generation, "code": error.code, "retryable": error.retryable})
+    else:
+        image = models.ImageAsset(product_id=batch.product_id, batch_id=batch_id,
+            generation_item_id=item_id, object_key="pending", format=active_format,
+            width=width, height=height, quality=active_quality, sha256=hashlib.sha256(content).hexdigest())
         db.add(image)
         db.flush()
         extension = "png" if active_format == "png" else "webp"
-        image.object_key = (
-            f"products/{batch.product_id}/generated/{batch.id}/{image.id}.{extension}"
-        )
-        content_type = "image/png" if active_format == "png" else "image/webp"
-        media_store.put_bytes(image.object_key, content, content_type)
-        item.output_image_id = image.id
-        item.state = "completed"
-        item.retryable = False
-        item.completed_at = datetime.now(UTC)
-        add_event(
-            db,
-            batch.id,
-            "item_completed",
-            "generating",
-            {"item_id": item.id, "image_id": image.id},
-        )
-    except AppError as exc:
-        item.state = "failed"
-        item.error_code = exc.code
-        item.error_message = exc.message
-        item.retryable = exc.retryable
-        item.completed_at = datetime.now(UTC)
-        add_event(
-            db,
-            batch.id,
-            "item_failed",
-            "generating",
-            {"item_id": item.id, "code": exc.code, "retryable": exc.retryable},
-        )
-    except Exception:
-        item.state = "failed"
-        item.error_code = "generation_unexpected_error"
-        item.error_message = "图片生成失败，请稍后重试"
-        item.retryable = True
-        item.completed_at = datetime.now(UTC)
-        add_event(
-            db,
-            batch.id,
-            "item_failed",
-            "generating",
-            {"item_id": item.id, "code": item.error_code, "retryable": True},
-        )
-    finally:
-        heartbeat.stop()
-    item.lease_token = None
-    item.lease_expires_at = None
+        image.object_key = f"products/{batch.product_id}/generated/{batch_id}/{image.id}.{extension}"
+        media_store.put_bytes(image.object_key, content, "image/png" if active_format == "png" else "image/webp")
+        owned.output_image_id = image.id
+        owned.state = "completed"
+        owned.retryable = False
+        add_event(db, batch_id, "item_completed", "generating",
+                  {"item_id": item_id, "image_id": image.id, "attempt": generation, "request_id": request_id})
+    owned.completed_at = datetime.now(UTC)
+    owned.lease_token = None
+    owned.lease_expires_at = None
     db.commit()
+    return True

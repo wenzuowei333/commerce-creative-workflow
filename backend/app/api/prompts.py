@@ -13,6 +13,8 @@ from app.api.serializers import prompt_plan_payload
 from app.core.errors import AppError
 from app.db import get_db
 from app.domain.generation import GenerationType
+from app.services.plan_validation import validate_plan, current_analysis, require_current_plan
+from app.services.workflow_lock import workflow_lock
 
 router = APIRouter(prefix="/api/v1", tags=["prompts"])
 
@@ -70,6 +72,7 @@ def create_prompt_plan(
             message="图片数量必须为5、10或15",
             status_code=422,
         )
+    analysis = current_analysis(db, product)
     attributes = db.scalars(
         select(models.ProductAttribute).where(models.ProductAttribute.product_id == product.id)
     ).all()
@@ -84,8 +87,10 @@ def create_prompt_plan(
         payload.generation_type,
         payload.image_count,
     )
+    generated = validate_plan(generated, payload.generation_type.value, payload.image_count)
     plan = models.PromptPlan(
         product_id=product.id,
+        analysis_version_id=analysis.id,
         generation_type=payload.generation_type.value,
         image_count=payload.image_count,
         state="awaiting_prompt_confirmation",
@@ -118,13 +123,16 @@ def regenerate_prompt_plan(
     user: models.User = Depends(require_csrf),
     db: Session = Depends(get_db),
 ):
+    workflow_lock(db)
     plan, product = _owned_plan(db, plan_id, user)
+    require_current_plan(db, plan, product)
     generated = request.app.state.ai_provider.generate_prompt_plan(
         product.profile_json,
         GenerationType(plan.generation_type),
         plan.image_count,
         payload.instruction,
     )
+    generated = validate_plan(generated, plan.generation_type, plan.image_count)
     plan.active_version += 1
     plan.plan_json = generated
     plan.state = "awaiting_prompt_confirmation"
@@ -149,7 +157,10 @@ def confirm_prompt_plan(
     user: models.User = Depends(require_csrf),
     db: Session = Depends(get_db),
 ):
-    plan, _ = _owned_plan(db, plan_id, user)
+    workflow_lock(db)
+    plan, product = _owned_plan(db, plan_id, user)
+    require_current_plan(db, plan, product)
+    validate_plan(payload.plan, plan.generation_type, plan.image_count)
     if payload.plan != plan.plan_json:
         plan.active_version += 1
         plan.plan_json = payload.plan

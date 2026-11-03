@@ -1,4 +1,5 @@
 from datetime import UTC, datetime
+from copy import deepcopy
 
 from sqlalchemy import select
 from sqlalchemy.orm import Session
@@ -11,6 +12,8 @@ from app.providers import AIProvider
 from app.services.generation_events import add_event
 from app.services.generation_execution import process_item, reference_images
 from app.services.generation_limits import ensure_daily_capacity
+from app.services.workflow_lock import workflow_lock
+from app.services.plan_validation import validate_plan
 
 TERMINAL_ITEM_STATES = {"completed", "failed", "cancelled"}
 TERMINAL_BATCH_STATES = {"completed", "partial", "failed", "cancelled"}
@@ -21,6 +24,7 @@ def create_batch(
     *,
     plan: models.PromptPlan,
 ) -> models.GenerationBatch:
+    validate_plan(plan.plan_json, plan.generation_type, plan.image_count)
     directions = plan.plan_json.get("directions", [])
     variant_count = sum(len(direction.get("variants", [])) for direction in directions)
     if variant_count != plan.image_count:
@@ -34,6 +38,8 @@ def create_batch(
     batch = models.GenerationBatch(
         product_id=plan.product_id,
         prompt_plan_id=plan.id,
+        plan_version=plan.active_version,
+        plan_snapshot_json=deepcopy(plan.plan_json),
         generation_type=plan.generation_type,
         image_count=plan.image_count,
         state="queued",
@@ -78,12 +84,14 @@ def create_batch(
     return batch
 
 
-def refresh_batch_state(db: Session, batch: models.GenerationBatch) -> None:
+def refresh_batch_state(db: Session, batch: models.GenerationBatch, *, commit: bool = True) -> None:
+    workflow_lock(db)
+    db.refresh(batch)
     items = db.scalars(
         select(models.GenerationItem).where(
             models.GenerationItem.batch_id == batch.id,
             models.GenerationItem.kind == "initial",
-        )
+        ).execution_options(populate_existing=True)
     ).all()
     total = len(items)
     terminal = sum(item.state in TERMINAL_ITEM_STATES for item in items)
@@ -127,7 +135,10 @@ def refresh_batch_state(db: Session, batch: models.GenerationBatch) -> None:
             "total": total,
         },
     )
-    db.commit()
+    if commit:
+        db.commit()
+    else:
+        db.flush()
 
 
 def process_batch_inline(
@@ -188,13 +199,16 @@ def prepare_failed_items(
     *,
     batch: models.GenerationBatch,
     settings: Settings,
+    commit: bool = True,
 ) -> list[str]:
+    workflow_lock(db)
+    db.refresh(batch)
     failed = db.scalars(
         select(models.GenerationItem).where(
             models.GenerationItem.batch_id == batch.id,
             models.GenerationItem.kind == "initial",
             models.GenerationItem.state == "failed",
-        )
+        ).with_for_update().execution_options(populate_existing=True)
     ).all()
     if not failed:
         raise AppError(
@@ -202,12 +216,12 @@ def prepare_failed_items(
             message="当前任务没有可重试的失败图片",
             status_code=409,
         )
-    ensure_daily_capacity(db, settings, len(failed))
+    ensure_daily_capacity(db, settings, len(failed), include_pending=True)
     for item in failed:
         item.state = "queued"
         item.error_code = None
         item.error_message = None
     batch.state = "queued"
     batch.completed_at = None
-    refresh_batch_state(db, batch)
+    refresh_batch_state(db, batch, commit=commit)
     return [item.id for item in failed]

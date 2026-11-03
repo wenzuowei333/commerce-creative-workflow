@@ -364,6 +364,9 @@ class OpenAICompatibleProvider:
 
 def build_ai_provider(settings: Settings) -> AIProvider:
     if settings.ai_mode == "mock":
+        if settings.environment == "demo":
+            from app.demo_provider import ShowcaseMockProvider
+            return ShowcaseMockProvider()
         return MockAIProvider()
     if not settings.openai_compat_base_url or not settings.openai_compat_api_key:
         raise RuntimeError("OpenAI-compatible provider configuration is incomplete")

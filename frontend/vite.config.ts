@@ -5,15 +5,15 @@ export default defineConfig({
   base: "/image-studio/",
   plugins: [react()],
   server: {
-    port: 5174,
+    port: 18141,
     proxy: {
       "/image-studio/api": {
-        target: "http://127.0.0.1:8100",
+        target: "http://127.0.0.1:18140",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/image-studio/, ""),
       },
       "/image-studio/health": {
-        target: "http://127.0.0.1:8100",
+        target: "http://127.0.0.1:18140",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/image-studio/, ""),
       },

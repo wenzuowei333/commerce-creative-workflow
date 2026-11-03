@@ -14,9 +14,9 @@ class Settings(BaseSettings):
     app_name: str = "商品视觉工作流演示"
     app_base_path: str = "/image-studio"
     environment: str = "demo"
-    database_url: str = "postgresql+psycopg://portfolio_demo:local-demo-only@127.0.0.1:25433/creative_demo"
-    redis_url: str = "redis://127.0.0.1:26379/0"
-    queue_mode: str = "inline"
+    database_url: str = "postgresql+psycopg://portfolio_demo:local-demo-only@127.0.0.1:25436/creative_demo"
+    redis_url: str = "redis://127.0.0.1:26380/0"
+    queue_mode: str = "dramatiq"
     media_backend: str = "local"
     media_root: str = str(ROOT / "runtime/media")
     cos_secret_id: str = ""
@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     cos_region: str = ""
     cos_bucket: str = ""
     cos_scheme: str = "https"
-    session_backend: str = "memory"
+    session_backend: str = "redis"
     ai_mode: str = "mock"
     admin_username: str = "demo_admin"
     admin_password: str = "LocalDemo-2026!"
@@ -35,8 +35,10 @@ class Settings(BaseSettings):
     login_window_seconds: int = 300
     image_daily_limit: int = 200
     generation_concurrency: int = 2
-    generation_lease_seconds: int = 90
-    generation_heartbeat_seconds: int = 25
+    generation_lease_seconds: float = 12
+    generation_heartbeat_seconds: float = 2
+    demo_generation_delay_seconds: float = 0.5
+    recovery_interval_seconds: float = 3
     backup_cos_prefix: str = "backups/image-studio"
     metrics_enabled: bool = True
     vision_model: str = "gpt-5.6-terra"
@@ -65,8 +67,12 @@ class Settings(BaseSettings):
             raise ValueError("Media must use this candidate's runtime/media directory")
         from urllib.parse import urlparse
         redis = urlparse(self.redis_url)
-        if redis.scheme != "redis" or redis.hostname not in {"127.0.0.1", "localhost", "redis"} or redis.port not in {6379, 26379}:
+        if redis.scheme != "redis" or redis.hostname not in {"127.0.0.1", "localhost", "redis"} or redis.port not in {6379, 26380, 26381}:
             raise ValueError("Redis must point to the local demo service")
+        if self.generation_lease_seconds <= 0 or not 0 < self.generation_heartbeat_seconds < self.generation_lease_seconds:
+            raise ValueError("Heartbeat must be shorter than a positive lease")
+        if not 0 <= self.demo_generation_delay_seconds <= 5:
+            raise ValueError("Mock demo delay must be between zero and five seconds")
         return self
 
     def public_feature_flags(self) -> dict[str, bool]:

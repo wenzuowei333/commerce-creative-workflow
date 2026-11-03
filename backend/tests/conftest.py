@@ -11,6 +11,7 @@ atexit.register(shutil.rmtree, _runtime_root, True)
 
 os.environ.update(
     {
+        "ENVIRONMENT": "test",
         "MEDIA_BACKEND": "local",
         "MEDIA_ROOT": str(_runtime_root / "media"),
     }

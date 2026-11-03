@@ -34,6 +34,15 @@ def test_analysis_confirmation_and_prompt_plan_flow(tmp_path):
             headers={"Idempotency-Key": "analysis-confirm-1", "X-CSRF-Token": csrf},
             json={"profile": profile, "attributes": attributes},
         )
+        assert confirmed.status_code == 409
+        assert confirmed.json()["error"]["code"] == "risk_confirmation_required"
+        # Drop the unverified claim before explicitly confirming the product.
+        attributes.pop()
+        confirmed = client.post(
+            f"/api/v1/analysis/{analysis['id']}/confirm",
+            headers={"Idempotency-Key": "analysis-confirm-safe", "X-CSRF-Token": csrf},
+            json={"profile": profile, "attributes": attributes},
+        )
         assert confirmed.status_code == 200
 
         prompt_response = client.post(

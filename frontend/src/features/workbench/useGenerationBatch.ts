@@ -50,7 +50,8 @@ export function useGenerationBatch(productId: string, promptPlanId?: string) {
     stream.addEventListener("batch_progress", refresh);
     stream.addEventListener("item_completed", refresh);
     stream.addEventListener("item_failed", refresh);
-    stream.onerror = () => stream.close();
+    // Keep native EventSource reconnection; polling also reads persisted state.
+    stream.onerror = refresh;
     return () => stream.close();
   }, [batch.data?.state, batchId, queryClient]);
 

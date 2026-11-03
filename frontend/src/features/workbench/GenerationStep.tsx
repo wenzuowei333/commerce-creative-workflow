@@ -25,6 +25,7 @@ function statusLabel(state: string): string {
   if (state === "completed") return "已完成";
   if (state === "partial") return "部分完成";
   if (state === "failed") return "生成失败";
+  if (state === "cancelled") return "已取消";
   return "生成中";
 }
 
@@ -36,6 +37,7 @@ export function GenerationStep({ workspace }: Props) {
     workspace.product.id,
     plan?.id,
   );
+  const [demoScenario, setDemoScenario] = useState("partial_once");
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [revisionInstruction, setRevisionInstruction] = useState("");
   const [templateName, setTemplateName] = useState("");
@@ -49,7 +51,7 @@ export function GenerationStep({ workspace }: Props) {
       apiRequest<GenerationBatch>("/generation-batches", {
         method: "POST",
         idempotent: true,
-        body: { prompt_plan_id: plan?.id },
+        body: { prompt_plan_id: plan?.id, demo_scenario: demoScenario },
       }),
     onSuccess: (created) => {
       setBatchId(created.id);
@@ -166,6 +168,13 @@ export function GenerationStep({ workspace }: Props) {
         <div className="empty-state">
           <ImageDown size={34} />
           <h2>提示词已确认</h2>
+          <label className="field-label">
+            Mock 演示场景
+            <select className="field" aria-label="Mock 演示场景" value={demoScenario} onChange={(event) => setDemoScenario(event.target.value)}>
+              <option value="partial_once">第 3 张首次失败，手动重试</option>
+              <option value="success">全部正常生成</option>
+            </select>
+          </label>
           <button className="button" disabled={start.isPending} onClick={() => start.mutate()}>
             {start.isPending ? "正在创建任务" : `开始生成 ${plan.image_count} 张`}
           </button>
@@ -174,11 +183,19 @@ export function GenerationStep({ workspace }: Props) {
 
       {current && (
         <>
+          <p>方案 V{current.plan_version} · 批次 {current.id.slice(0, 8)} · {current.demo_scenario === "partial_once" ? "第 3 张首次失败演示" : "正常生成"}</p>
           <GenerationProgress
             batch={current}
             isRetrying={retry.isPending}
             onRetry={() => retry.mutate()}
           />
+          {current.items.filter((item) => item.state === "failed").map((item) => (
+            <p role="status" key={item.id}>第 {item.index + 1} 张 · 第 {item.attempts} 次：{item.error_message}</p>
+          ))}
+          <details>
+            <summary>逐张任务与尝试次数</summary>
+            <ul>{current.items.map((item) => <li key={item.id}>第 {item.index + 1} 张 · {item.state} · 已尝试 {item.attempts} 次 · 结果 {item.image?.id.slice(0, 8) || "未生成"}</li>)}</ul>
+          </details>
           <GenerationGallery
             batch={current}
             completedItems={completedImages}

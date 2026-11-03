@@ -18,11 +18,11 @@ export type SystemInfo = {
 };
 
 const defaultFlags: FeatureFlags = {
-  live_provider: true,
-  cos_media: true,
+  live_provider: false,
+  cos_media: false,
   image_revisions: true,
-  hd_finalize: true,
-  templates: true,
+  hd_finalize: false,
+  templates: false,
 };
 
 export function useSystemInfo() {

@@ -4,7 +4,10 @@ from uuid import uuid4
 
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, RedirectResponse
+from fastapi.staticfiles import StaticFiles
+from starlette.exceptions import HTTPException
+from pathlib import Path
 from sqlalchemy import select
 
 from app import models
@@ -34,7 +37,7 @@ def _build_lifespan(settings: Settings, session_factory):
     @asynccontextmanager
     async def lifespan(_: FastAPI):
         engine = session_factory.kw["bind"]
-        if settings.environment != "production":
+        if settings.environment == "test":
             Base.metadata.create_all(engine)
         with session_factory() as db:
             user = db.scalar(
@@ -81,6 +84,8 @@ def _register_routers(app: FastAPI) -> None:
     )
     for router in routers:
         app.include_router(router)
+        if app.state.settings.environment == "demo":
+            app.include_router(router, prefix=app.state.settings.app_base_path, include_in_schema=False)
 
 
 def _register_middleware(app: FastAPI, settings: Settings) -> None:
@@ -162,6 +167,20 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     _register_routers(app)
     _register_middleware(app, active_settings)
     _register_exception_handlers(app)
+    web_root = Path(__file__).resolve().parents[2] / "frontend/dist"
+    if active_settings.environment == "demo" and web_root.is_dir():
+        class SPAFiles(StaticFiles):
+            async def get_response(self, path, scope):
+                try:
+                    return await super().get_response(path, scope)
+                except HTTPException as exc:
+                    if exc.status_code != 404 or path.startswith(("api/", "health/", "assets/")):
+                        raise
+                    return await super().get_response("index.html", scope)
+        app.mount(active_settings.app_base_path, SPAFiles(directory=web_root, html=True), name="workbench")
+        @app.get("/", include_in_schema=False)
+        def workbench_redirect():
+            return RedirectResponse(active_settings.app_base_path + "/")
     return app
 
 

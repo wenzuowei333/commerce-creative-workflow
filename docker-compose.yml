@@ -1,4 +1,12 @@
-name: portfolio-creative-demo
+name: portfolio-creative-stage4
+x-demo-env: &demo-env
+  ENVIRONMENT: demo
+  DATABASE_URL: postgresql+psycopg://portfolio_demo:local-demo-only@postgres:5432/creative_demo
+  REDIS_URL: redis://redis:6379/0
+  QUEUE_MODE: dramatiq
+  SESSION_BACKEND: redis
+  AI_MODE: mock
+  MEDIA_BACKEND: local
 services:
   postgres:
     image: postgres:16-alpine
@@ -6,10 +14,8 @@ services:
       POSTGRES_DB: creative_demo
       POSTGRES_USER: portfolio_demo
       POSTGRES_PASSWORD: local-demo-only
-    ports:
-      - "127.0.0.1:25433:5432"
-    volumes:
-      - demo_postgres:/var/lib/postgresql/data
+    ports: ["127.0.0.1:25436:5432"]
+    volumes: ["demo_postgres:/var/lib/postgresql/data"]
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U portfolio_demo -d creative_demo"]
       interval: 2s
@@ -17,33 +23,73 @@ services:
       retries: 30
   redis:
     image: redis:7-alpine
-    command: ["redis-server", "--appendonly", "no"]
-    ports:
-      - "127.0.0.1:26379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+    ports: ["127.0.0.1:26380:6379"]
+    volumes: ["demo_redis:/data"]
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 2s
       timeout: 3s
       retries: 30
-  seed:
-    profiles: ["tools"]
+  test-postgres:
+    profiles: ["checks"]
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: creative_demo
+      POSTGRES_USER: portfolio_demo
+      POSTGRES_PASSWORD: local-demo-only
+    ports: ["127.0.0.1:25437:5432"]
+    tmpfs: ["/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U portfolio_demo -d creative_demo"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  test-redis:
+    profiles: ["checks"]
+    image: redis:7-alpine
+    ports: ["127.0.0.1:26381:6379"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  api:
+    profiles: ["app"]
+    image: portfolio-creative-api:stage4
     build:
       context: .
       dockerfile: backend/Dockerfile
-    environment:
-      ENVIRONMENT: demo
-      DATABASE_URL: postgresql+psycopg://portfolio_demo:local-demo-only@postgres:5432/creative_demo
-      AI_MODE: mock
-      REDIS_URL: redis://redis:6379/0
-      MEDIA_ROOT: /workspace/runtime/media
-      MEDIA_BACKEND: local
-      FEATURE_LIVE_PROVIDER: "false"
-      FEATURE_COS_MEDIA: "false"
-    command: ["sh", "-c", "alembic upgrade head && python -m demo.seed"]
+    environment: *demo-env
+    command: ["sh", "-c", "alembic upgrade head && python -m demo.seed && uvicorn app.main:app --host 0.0.0.0 --port 8000"]
+    ports: ["127.0.0.1:18140:8000"]
+    volumes: ["demo_media:/workspace/runtime/media"]
     depends_on:
-      postgres:
-        condition: service_healthy
-    volumes:
-      - ./runtime:/workspace/runtime
+      postgres: {condition: service_healthy}
+      redis: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/demo', timeout=3)"]
+      interval: 3s
+      timeout: 4s
+      retries: 60
+  worker:
+    pull_policy: never
+    profiles: ["app"]
+    image: portfolio-creative-api:stage4
+    environment: *demo-env
+    command: ["dramatiq", "app.workers.tasks", "--processes", "1", "--threads", "2"]
+    volumes: ["demo_media:/workspace/runtime/media"]
+    depends_on:
+      api: {condition: service_healthy}
+  recovery:
+    pull_policy: never
+    profiles: ["app"]
+    image: portfolio-creative-api:stage4
+    environment: *demo-env
+    command: ["python", "-m", "app.workers.recovery"]
+    depends_on:
+      api: {condition: service_healthy}
 volumes:
   demo_postgres:
+  demo_redis:
+  demo_media:

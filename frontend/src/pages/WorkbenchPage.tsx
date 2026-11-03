@@ -101,7 +101,7 @@ export function WorkbenchPage() {
           {activeStep === 3 && (
             <PromptStep workspace={workspace.data} onConfirmed={() => setActiveStep(4)} />
           )}
-          {activeStep === 4 && <GenerationStep workspace={workspace.data} />}
+          {activeStep === 4 && <GenerationStep key={`${workspace.data.product.id}:${workspace.data.latest_prompt_plan?.id}`} workspace={workspace.data} />}
         </>
       ) : workspace.isLoading || products.isLoading ? (
         <div className="empty-state">

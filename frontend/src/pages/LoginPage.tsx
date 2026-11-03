@@ -47,7 +47,7 @@ export function LoginPage() {
             <Sparkles size={22} />
           </div>
           <h1>登录商品视觉工作流演示</h1>
-          <p>使用本地演示账号继续。</p>
+          <p>使用 demo_admin 或 demo_other，密码 LocalDemo-2026!。</p>
           <form className={styles.form} onSubmit={submit}>
             <label className="field-label">
               账号
@@ -77,7 +77,7 @@ export function LoginPage() {
           </form>
           <div className={styles.security}>
             <LockKeyhole size={14} />
-            会话通过安全 Cookie 保存
+            合成数据与 Mock 输出，无需模型密钥
           </div>
         </div>
       </section>

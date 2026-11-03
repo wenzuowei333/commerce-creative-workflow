@@ -14,6 +14,7 @@ from app.api.dependencies import require_csrf, require_feature, require_user
 from app.api.serializers import prompt_plan_payload
 from app.core.errors import AppError
 from app.db import get_db
+from app.services.plan_validation import current_analysis
 
 router = APIRouter(
     prefix="/api/v1",
@@ -220,9 +221,11 @@ def apply_template(
             message="请先确认商品识别信息",
             status_code=409,
         )
+    analysis = current_analysis(db, product)
     rendered = _render_recipe(template.recipe_json, product)
     plan = models.PromptPlan(
         product_id=product.id,
+        analysis_version_id=analysis.id,
         generation_type=template.generation_type,
         image_count=int(rendered.get("image_count", 5)),
         state="awaiting_prompt_confirmation",

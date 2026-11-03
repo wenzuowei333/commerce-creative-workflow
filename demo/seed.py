@@ -7,7 +7,7 @@ from io import BytesIO
 from pathlib import Path
 from uuid import NAMESPACE_URL, uuid5
 from PIL import Image, ImageDraw
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, select, func
 from sqlalchemy.orm import Session
 from app import models as m
 from app.config import Settings
@@ -96,6 +96,9 @@ def main():
     engine = create_engine(settings.database_url)
     media = Path(settings.media_root)
     with Session(engine) as db, db.begin():
+        if db.scalar(select(func.count()).select_from(m.AnalysisVersion)):
+            print(json.dumps({"synthetic": True, "existing_workflow_preserved": True}))
+            return
         for username in ("demo_admin", "demo_other"):
             row_id = stable_id(username)
             existing = db.get(m.User, row_id)

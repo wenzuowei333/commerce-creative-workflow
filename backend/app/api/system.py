@@ -63,3 +63,19 @@ def system_info(request: Request, _: models.User = Depends(require_user)):
         },
         request_id(request),
     )
+
+
+@router.get("/health/demo")
+def health_demo(request: Request):
+    settings = request.app.state.settings
+    checks = {"database": False, "redis": False, "mock": settings.ai_mode == "mock"}
+    try:
+        with request.app.state.session_factory() as db:
+            db.execute(text("SELECT 1"))
+        checks["database"] = True
+        checks["redis"] = bool(Redis.from_url(settings.redis_url).ping())
+    except Exception:
+        pass
+    ready = all(checks.values()) and settings.environment == "demo"
+    return JSONResponse(status_code=200 if ready else 503,
+        content={"status": "ready" if ready else "degraded", "scope": "local_synthetic_demo", "checks": checks})

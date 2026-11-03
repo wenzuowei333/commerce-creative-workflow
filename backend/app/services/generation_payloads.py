@@ -45,6 +45,8 @@ def batch_payload(db: Session, batch: models.GenerationBatch) -> dict[str, Any]:
         "id": batch.id,
         "product_id": batch.product_id,
         "prompt_plan_id": batch.prompt_plan_id,
+        "plan_version": batch.plan_version,
+        "demo_scenario": batch.demo_scenario,
         "generation_type": batch.generation_type,
         "image_count": batch.image_count,
         "state": batch.state,

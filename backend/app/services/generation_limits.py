@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import UTC, datetime
 
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
@@ -12,7 +12,7 @@ def image_attempts_today(db: Session) -> int:
     return int(
         db.scalar(
             select(func.coalesce(func.sum(models.UsageLedger.units), 0)).where(
-                models.UsageLedger.usage_date == date.today(),
+                models.UsageLedger.usage_date == datetime.now(UTC).date(),
                 models.UsageLedger.operation == "image_generation",
             )
         )
@@ -20,8 +20,10 @@ def image_attempts_today(db: Session) -> int:
     )
 
 
-def ensure_daily_capacity(db: Session, settings: Settings, requested: int) -> None:
+def ensure_daily_capacity(db: Session, settings: Settings, requested: int, *, include_pending: bool = False) -> None:
     used = image_attempts_today(db)
+    if include_pending:
+        used += int(db.scalar(select(func.count()).select_from(models.GenerationItem).where(models.GenerationItem.state == "queued")) or 0)
     if used + requested > settings.image_daily_limit:
         raise AppError(
             code="daily_image_limit_exceeded",

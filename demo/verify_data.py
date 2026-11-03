@@ -32,7 +32,7 @@ def main():
             assert im.size == (asset['width'],asset['height'])
             assert not im.getexif() and not im.info
     with Session(engine) as db:
-        for table, expected in [(m.User,2),(m.Product,2),(m.ProductAsset,8),(m.GenerationBatch,0),(m.GenerationItem,0),(m.ImageAsset,0),(m.UsageLedger,0)]:
+        for table, expected in [(m.User,2),(m.Product,2),(m.ProductAsset,8)]:
             assert db.scalar(select(func.count()).select_from(table)) == expected
         for user in db.scalars(select(m.User)):
             assert verify_password(user.password_hash,'LocalDemo-2026!')
@@ -47,7 +47,7 @@ def main():
                 row.pop('password_hash',None)
             normalized[table.name]=rows
         digest = hashlib.sha256(json.dumps(normalized,sort_keys=True,default=str,ensure_ascii=False).encode()).hexdigest()
-    print(json.dumps({'status':'passed','scope':'phase2_schema_and_synthetic_data_only','tables':18,
+    print(json.dumps({'status':'passed','scope':'schema_and_synthetic_inputs_runtime_allowed','tables':18,
                       'products':2,'reference_assets':8,'mock_sample_files':5,
                       'normalized_data_sha256':digest}))
 

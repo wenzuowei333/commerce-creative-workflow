@@ -19,6 +19,8 @@ def build_client(tmp_path: Path, **overrides) -> TestClient:
         "queue_mode": "inline",
         "session_backend": "memory",
         "ai_mode": "mock",
+        "feature_hd_finalize": True,
+        "feature_templates": True,
         "admin_username": "admin",
         "admin_password": "test-password",
         "session_secret": "test-secret-that-is-long-enough",

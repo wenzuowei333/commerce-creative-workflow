@@ -13,11 +13,11 @@ def test_settings_use_image_studio_defaults(monkeypatch):
     assert settings.vision_model == "gpt-5.6-terra"
     assert settings.image_model == "gpt-image-2"
     assert settings.public_feature_flags() == {
-        "live_provider": True,
-        "cos_media": True,
+        "live_provider": False,
+        "cos_media": False,
         "image_revisions": True,
-        "hd_finalize": True,
-        "templates": True,
+        "hd_finalize": False,
+        "templates": False,
     }
 
 
@@ -30,7 +30,7 @@ def test_feature_flags_can_be_disabled_independently():
 
     assert settings.feature_enabled("image_revisions") is False
     assert settings.feature_enabled("templates") is False
-    assert settings.feature_enabled("hd_finalize") is True
+    assert settings.feature_enabled("hd_finalize") is False
 
 
 def test_production_requires_external_services():
@@ -41,6 +41,7 @@ def test_production_requires_external_services():
         queue_mode="inline",
         media_backend="local",
         session_backend="memory",
+        admin_password="change-me",
     )
 
     errors = settings.production_readiness_errors()

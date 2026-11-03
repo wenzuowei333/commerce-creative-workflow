@@ -13,6 +13,7 @@ from app.api.serializers import analysis_payload, product_payload
 from app.core.errors import AppError
 from app.db import get_db
 from app.providers import ReferenceImage
+from app.services.workflow_lock import workflow_lock
 
 router = APIRouter(prefix="/api/v1", tags=["analysis"])
 
@@ -50,7 +51,7 @@ def start_analysis(
             models.ProductAsset.status == "ready",
             models.ProductAsset.deleted_at.is_(None),
         )
-        .order_by(models.ProductAsset.position)
+        .order_by(models.ProductAsset.is_primary.desc(), models.ProductAsset.position)
     ).all()
     if not assets:
         raise AppError(
@@ -113,6 +114,19 @@ def confirm_analysis(
     product = db.get(models.Product, analysis.product_id) if analysis else None
     if not analysis or not product or product.owner_id != user.id:
         raise AppError(code="analysis_not_found", message="识图记录不存在", status_code=404)
+    workflow_lock(db)
+    latest_version = db.scalar(select(func.max(models.AnalysisVersion.version)).where(models.AnalysisVersion.product_id == product.id))
+    if analysis.version != latest_version:
+        raise AppError(code="analysis_obsolete", message="识图版本已更新，请重新载入", status_code=409)
+    submitted = {a.key: a for a in payload.attributes}
+    source_risks = {a["key"] for a in analysis.result_json.get("attributes", []) if a.get("high_risk")}
+    if any(key not in submitted or not submitted[key].high_risk or not submitted[key].user_confirmed for key in source_risks):
+        raise AppError(code="risk_confirmation_required", message="请保留并人工确认原高风险字段", status_code=409)
+    if any(a.high_risk and not a.user_confirmed for a in payload.attributes):
+        raise AppError(code="risk_confirmation_required", message="请人工确认高风险字段；未知值可保留未知", status_code=409)
+    asset_ids = set(db.scalars(select(models.ProductAsset.id).where(models.ProductAsset.product_id == product.id, models.ProductAsset.status == "ready", models.ProductAsset.deleted_at.is_(None))))
+    if any(not set(a.source_asset_ids).issubset(asset_ids) for a in payload.attributes):
+        raise AppError(code="analysis_reference_invalid", message="属性引用了无效的商品素材", status_code=422)
     db.execute(
         delete(models.ProductAttribute).where(models.ProductAttribute.product_id == product.id)
     )

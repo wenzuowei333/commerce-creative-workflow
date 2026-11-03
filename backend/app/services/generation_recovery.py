@@ -5,16 +5,18 @@ from sqlalchemy.orm import Session
 
 from app import models
 from app.services.generation_events import add_event
+from app.services.workflow_lock import workflow_lock
 
 
 def recover_stale_items(db: Session) -> list[str]:
+    workflow_lock(db)
     now = datetime.now(UTC)
     stale = db.scalars(
         select(models.GenerationItem).where(
             models.GenerationItem.state == "generating",
             models.GenerationItem.lease_expires_at.is_not(None),
             models.GenerationItem.lease_expires_at < now,
-        )
+        ).with_for_update(skip_locked=True).execution_options(populate_existing=True)
     ).all()
     recovered_ids = []
     for item in stale:

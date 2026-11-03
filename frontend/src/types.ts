@@ -111,6 +111,8 @@ export type GenerationItem = {
 };
 
 export type GenerationBatch = {
+  plan_version: number;
+  demo_scenario: string;
   id: string;
   product_id: string;
   prompt_plan_id: string;

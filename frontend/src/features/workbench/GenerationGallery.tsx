@@ -55,7 +55,7 @@ export function GenerationGallery({
                   alt={`${direction.title} 结果 ${item.index + 1}`}
                 />
                 <div className={styles.resultMeta}>
-                  <span>{resultLabel(item)}</span>
+                  <span>{resultLabel(item)} · 第 {item.attempts} 次<br /><small>结果 {image.id.slice(0, 8)}</small></span>
                   <div className={styles.resultActions}>
                     <button onClick={() => window.open(appUrl(image.preview_url), "_blank")}>
                       查看

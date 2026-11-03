@@ -22,7 +22,7 @@ type Props = {
 export function PromptStep({ workspace, onConfirmed }: Props) {
   const queryClient = useQueryClient();
   const [generationType, setGenerationType] = useState<"main" | "detail">("main");
-  const [imageCount, setImageCount] = useState(15);
+  const [imageCount, setImageCount] = useState(5);
   const [activePlan, setActivePlan] = useState<PromptPlan | null>(
     workspace.latest_prompt_plan,
   );
@@ -123,6 +123,7 @@ export function PromptStep({ workspace, onConfirmed }: Props) {
           <h2>策划生图提示词</h2>
           <p>{activePlan ? `方案版本 V${activePlan.active_version}` : "新建视觉方案"}</p>
         </div>
+        {activePlan && <button className="button secondary" onClick={() => { setActivePlan(null); setRecipe(null); }}>新建策划方案</button>}
         {activePlan?.state === "confirmed" && (
           <span className="status-pill success">已确认</span>
         )}

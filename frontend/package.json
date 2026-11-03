@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "tsc -b && vite build",
-    "test:e2e": "rm -rf /tmp/image-studio-e2e.db /tmp/image-studio-e2e-media && playwright test",
+    "test:e2e": "playwright test",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc -b --pretty false"

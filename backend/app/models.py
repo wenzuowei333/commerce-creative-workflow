@@ -101,6 +101,7 @@ class AnalysisVersion(TimestampMixin, Base):
 
 class PromptPlan(TimestampMixin, Base):
     __tablename__ = "prompt_plans"
+    analysis_version_id: Mapped[str | None] = mapped_column(ForeignKey("analysis_versions.id"), nullable=True)
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
     product_id: Mapped[str] = mapped_column(ForeignKey("products.id"), index=True)
     generation_type: Mapped[str] = mapped_column(String(20))
@@ -136,6 +137,9 @@ class GenerationBatch(TimestampMixin, Base):
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
     product_id: Mapped[str] = mapped_column(ForeignKey("products.id"), index=True)
     prompt_plan_id: Mapped[str] = mapped_column(ForeignKey("prompt_plans.id"), index=True)
+    demo_scenario: Mapped[str] = mapped_column(String(30), default="success", server_default="success")
+    plan_version: Mapped[int] = mapped_column(Integer, default=1, server_default="1")
+    plan_snapshot_json: Mapped[dict[str, Any]] = mapped_column(JSON, default=dict, server_default="{}")
     generation_type: Mapped[str] = mapped_column(String(20))
     image_count: Mapped[int] = mapped_column(Integer)
     state: Mapped[str] = mapped_column(String(50), default="queued", index=True)

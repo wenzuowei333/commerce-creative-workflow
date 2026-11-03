@@ -46,7 +46,7 @@ export function AppShell({ username, onLogout }: Props) {
           </div>
           <div>
             <strong>商品视觉工作流演示</strong>
-            <span>电商视觉生产</span>
+            <span>合成商品 · Mock 工作流</span>
           </div>
         </div>
         <nav className={styles.nav} aria-label="主导航">
@@ -68,7 +68,7 @@ export function AppShell({ username, onLogout }: Props) {
           <div className={styles.avatar}>{username.slice(0, 1).toUpperCase()}</div>
           <div className={styles.accountText}>
             <strong>{username}</strong>
-            <span>内部账号</span>
+            <span>本地演示账号</span>
           </div>
           <button className={`icon-button ${styles.logout}`} onClick={onLogout} title="退出登录">
             <LogOut size={18} />

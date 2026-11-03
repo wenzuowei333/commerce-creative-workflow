@@ -27,8 +27,9 @@ export function GenerationProgress({ batch, isRetrying, onRetry }: Props) {
       <div className={styles.progressTrack} role="progressbar" aria-valuenow={batch.progress}>
         <div className={styles.progressValue} style={{ width: `${batch.progress}%` }} />
       </div>
+      <p>已完成 {batch.items.filter((item) => item.kind === "initial" && item.state === "completed").length} · 失败 {batch.items.filter((item) => item.kind === "initial" && item.state === "failed").length} · 共 {batch.image_count} 张</p>
       <div className={styles.stages}>
-        {["任务已排队", "读取参考素材", "逐张生成", "结果已落盘"].map(
+        {["任务已排队", "读取参考素材", "逐张生成", "本轮执行结束"].map(
           (stage, index) => (
             <div
               className={`${styles.stage} ${index <= currentStage ? styles.stageActive : ""}`}
@@ -40,7 +41,7 @@ export function GenerationProgress({ batch, isRetrying, onRetry }: Props) {
           ),
         )}
       </div>
-      {batch.state === "partial" && (
+      {(batch.state === "partial" || batch.state === "failed") && (
         <button className="button secondary" disabled={isRetrying} onClick={onRetry}>
           <RefreshCw size={17} />
           仅补生成失败图片

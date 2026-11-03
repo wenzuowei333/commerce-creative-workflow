@@ -137,7 +137,7 @@ def product_workspace(
             "product": product_payload(product),
             "assets": [asset_payload(asset) for asset in assets],
             "latest_analysis": analysis_payload(analysis),
-            "latest_prompt_plan": prompt_plan_payload(prompt_plan),
+            "latest_prompt_plan": prompt_plan_payload(prompt_plan) if prompt_plan and analysis and prompt_plan.analysis_version_id == analysis.id else None,
         },
         request_id(request),
     )
