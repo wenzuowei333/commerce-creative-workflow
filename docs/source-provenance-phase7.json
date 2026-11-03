@@ -2,7 +2,7 @@
   "phase": 7,
   "date": "2026-11-04",
   "phase6_baseline": "ee650e37de6b15d3f0586ccf39c8b0586d43672d",
-  "scope": "All current files except this manifest. Business, tests, dependency locks and Compose unchanged; CI reporting distinguishes GitHub Actions.",
+  "scope": "All current files except this manifest. Publication docs and supported hosted CI reporting updated; dependency locks and Compose unchanged. Business logic and tests unchanged.",
   "summary": {
     "unchanged_from_phase6": 181,
     "updated_publication_document_or_ci": 6,
