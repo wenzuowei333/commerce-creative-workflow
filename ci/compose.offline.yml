@@ -1,4 +1,56 @@
-# Apply after docker-compose.yml; package/image downloads happen before runtime.
+# Runtime is internal; fixed ingress has no arbitrary proxy target.
+services:
+  postgres:
+    ports: !reset []
+  api:
+    ports: !reset []
+  test-postgres:
+    ports: !reset []
+  api-ingress:
+    profiles: ["app"]
+    image: portfolio-creative-api:${SHOWCASE_IMAGE_TAG:-stage4}
+    pull_policy: never
+    command: ["python", "/proxy.py", "--target", "api", "--port", "8000"]
+    volumes: ["./ci/tcp_proxy.py:/proxy.py:ro"]
+    ports: ["127.0.0.1:18140:8000"]
+    networks: [default, ingress]
+    depends_on:
+      api: {condition: service_healthy}
+  test-postgres-ingress:
+    profiles: ["checks"]
+    image: portfolio-creative-api:${SHOWCASE_IMAGE_TAG:-stage4}
+    pull_policy: never
+    command: ["python", "/proxy.py", "--target", "test-postgres", "--port", "5432"]
+    volumes: ["./ci/tcp_proxy.py:/proxy.py:ro"]
+    ports: ["127.0.0.1:25437:5432"]
+    networks: [default, ingress]
+    depends_on:
+      test-postgres: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket; socket.create_connection(('127.0.0.1',5432),timeout=2).close()"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  redis:
+    ports: !reset []
+  test-redis:
+    ports: !reset []
+  test-redis-ingress:
+    profiles: ["checks"]
+    image: portfolio-creative-api:${SHOWCASE_IMAGE_TAG:-stage4}
+    pull_policy: never
+    command: ["python", "/proxy.py", "--target", "test-redis", "--port", "6379"]
+    volumes: ["./ci/tcp_proxy.py:/proxy.py:ro"]
+    ports: ["127.0.0.1:26381:6379"]
+    networks: [default, ingress]
+    depends_on:
+      test-redis: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket; socket.create_connection(('127.0.0.1',6379),timeout=2).close()"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
 networks:
   default:
     internal: true
+  ingress: {}
