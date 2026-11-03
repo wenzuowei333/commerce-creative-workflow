@@ -1,0 +1,174 @@
+{
+  "date": "2026-11-03",
+  "tested_commit": "552f676dbf2120f36a3ae56f7632e496708b1989",
+  "tests_from_new_clean_checkout": true,
+  "summary": {
+    "test_runs": [
+      {
+        "report": "source-validation.xml",
+        "tests": 42,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "duration_seconds": 11.983
+      },
+      {
+        "report": "postgres-validation.xml",
+        "tests": 21,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "duration_seconds": 42.281
+      },
+      {
+        "report": "frontend-validation.xml",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "duration_seconds": 0.006984250000000001
+      }
+    ],
+    "mock_only": true,
+    "real_model_evaluation": false,
+    "browser": {
+      "startTime": "2026-11-03T11:21:46.480Z",
+      "duration": 20803.834000000003,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "network-policy": {
+      "status": "passed",
+      "checks": [
+        {
+          "case": "dns_external",
+          "blocked": true
+        },
+        {
+          "case": "tcp_external_ip",
+          "blocked": true
+        },
+        {
+          "case": "connect_ex_external_ip",
+          "blocked": true
+        },
+        {
+          "case": "loopback_connection",
+          "allowed": true
+        }
+      ]
+    },
+    "data-rebuild": {
+      "status": "passed",
+      "new_project_only": true,
+      "repeat_seed_same_digest": true,
+      "fresh_volume_rebuild_same_digest": true,
+      "normalized_data_sha256": "db5c1e5510011ba010438af18570aa66c0e8309581bf03e0de995747d18c344d",
+      "tables": 18
+    },
+    "execution": {
+      "status": "passed",
+      "scope": "local_CI_entry_from_clean_checkout",
+      "finished_at_utc": "2026-11-03T11:22:07.313500+00:00",
+      "python": "3.12.12",
+      "steps": [
+        {
+          "step": "compose-config",
+          "exit_code": 0,
+          "duration_seconds": 0.171
+        },
+        {
+          "step": "existing-containers",
+          "exit_code": 0,
+          "duration_seconds": 0.1
+        },
+        {
+          "step": "existing-volumes",
+          "exit_code": 0,
+          "duration_seconds": 0.026
+        },
+        {
+          "step": "build-and-start",
+          "exit_code": 0,
+          "duration_seconds": 14.194
+        },
+        {
+          "step": "runtime-network",
+          "exit_code": 0,
+          "duration_seconds": 0.035
+        },
+        {
+          "step": "container-egress-probe",
+          "exit_code": 0,
+          "duration_seconds": 0.238
+        },
+        {
+          "step": "initial-data",
+          "exit_code": 0,
+          "duration_seconds": 2.093
+        },
+        {
+          "step": "repeat-seed",
+          "exit_code": 0,
+          "duration_seconds": 1.395
+        },
+        {
+          "step": "repeat-seed-data",
+          "exit_code": 0,
+          "duration_seconds": 1.743
+        },
+        {
+          "step": "remove-fresh-project",
+          "exit_code": 0,
+          "duration_seconds": 3.242
+        },
+        {
+          "step": "rebuild-empty-data",
+          "exit_code": 0,
+          "duration_seconds": 11.709
+        },
+        {
+          "step": "rebuilt-data",
+          "exit_code": 0,
+          "duration_seconds": 2.252
+        },
+        {
+          "step": "python-network-policy",
+          "exit_code": 0,
+          "duration_seconds": 0.059
+        },
+        {
+          "step": "start-test-ingress",
+          "exit_code": 0,
+          "duration_seconds": 6.116
+        },
+        {
+          "step": "backend-tests",
+          "exit_code": 0,
+          "duration_seconds": 59.909
+        },
+        {
+          "step": "frontend-tests",
+          "exit_code": 0,
+          "duration_seconds": 2.136
+        },
+        {
+          "step": "frontend-typecheck",
+          "exit_code": 0,
+          "duration_seconds": 0.631
+        },
+        {
+          "step": "browser-tests",
+          "exit_code": 0,
+          "duration_seconds": 21.502
+        }
+      ],
+      "fresh_data_check_requested": true,
+      "runtime_network_internal": true,
+      "hosted_github_actions_run": false
+    },
+    "status": "passed"
+  }
+}

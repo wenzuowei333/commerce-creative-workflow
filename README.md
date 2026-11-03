@@ -88,16 +88,24 @@ npm run test:e2e
 
 停止：`docker compose --profile app stop`。重置本候选全部演示数据：先 `docker compose --profile app down -v`，再重新启动；只删除此 Compose 项目的专用数据库、Redis 和媒体卷。
 
-此版是受人工确认约束的多模态工作流；识图/策划/修订为同步调用，初始批量生图走 Dramatiq。真实模型质量、外部收费严格一次、生产规模、完整依赖哈希失效链、模型安全评测不在本次承诺中。没有 MCP、LangGraph 或混合检索。尚未发布 GitHub；两项目统一复现/CI与招聘材料仍在后续阶段。
+此版是受人工确认约束的多模态工作流；识图/策划/修订为同步调用，初始批量生图走 Dramatiq。真实模型质量、外部收费严格一次、生产规模、完整依赖哈希失效链、模型安全评测不在本次承诺中。没有 MCP、LangGraph 或混合检索。阶段五本地/私有范围复现与内容验收已完成；招聘材料与公开发布仍待后续阶段。
 
 ## 阶段五验收入口
 
-按本文件安装测试依赖与浏览器后，在独立干净检出目录执行：
+在独立干净检出目录安装依赖（需要 Python 3.12、uv、Docker Compose 2.24.4+、Node 24）：
 
 ```sh
-python ci/run.py --fresh-data-check
+uv venv --python 3.12
+uv pip install -r backend/requirements-dev.lock
+npm --prefix frontend ci
+npx --prefix frontend playwright install chromium
+COMPOSE_PROJECT_NAME=portfolio-creative-acceptance SHOWCASE_IMAGE_TAG=phase5 E2E_BROWSER_CHANNEL=chromium .venv/bin/python ci/run.py --fresh-data-check
 ```
+
+命令面向本机演示端口空闲、该 Compose 项目尚不存在的环境。已有相同端口演示时先使用独立端口覆盖；更换项目名不会自动解除宿主机端口冲突。
 
 该入口要求新的 Compose 项目和空数据卷，实际验证种子重复/新卷重建后数据摘要一致，再运行回归和浏览器案例。运行阶段限制外网连接，详见 [阶段五验收](docs/phase5-acceptance.md)。已有演示项目不要传 `--fresh-data-check`；需要与现有服务并存时，在独立 Compose 项目中覆盖端口和镜像标签。
 
 本候选暂按本地/私有展示处理，上游没有许可证授权声明；见 [来源与许可边界](docs/licensing.md)。CI 工作流已编写，本地执行记录与远程 GitHub Actions 运行状态分别报告。
+
+本轮实测摘要、版本、耗时与修复记录见 [阶段五结果](docs/phase5-acceptance.md)。旧阶段报告保留原始时间与口径。
