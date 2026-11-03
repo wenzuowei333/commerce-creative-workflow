@@ -9,7 +9,7 @@ x-demo-env: &demo-env
   MEDIA_BACKEND: local
 services:
   postgres:
-    image: postgres:16-alpine
+    image: postgres:16-alpine@sha256:0cefaabd882e42bcb2a2f3dc56d3ce4770560ba62fd7f197f1a2e008fd5731ab
     environment:
       POSTGRES_DB: creative_demo
       POSTGRES_USER: portfolio_demo
@@ -22,7 +22,7 @@ services:
       timeout: 3s
       retries: 30
   redis:
-    image: redis:7-alpine
+    image: redis:7-alpine@sha256:8da19c7399dca900c6822a1cf30f9d2285585e2c4b457ff4095b0f4500054d3f
     command: ["redis-server", "--appendonly", "yes"]
     ports: ["127.0.0.1:26380:6379"]
     volumes: ["demo_redis:/data"]
@@ -33,7 +33,7 @@ services:
       retries: 30
   test-postgres:
     profiles: ["checks"]
-    image: postgres:16-alpine
+    image: postgres:16-alpine@sha256:0cefaabd882e42bcb2a2f3dc56d3ce4770560ba62fd7f197f1a2e008fd5731ab
     environment:
       POSTGRES_DB: creative_demo
       POSTGRES_USER: portfolio_demo
@@ -47,7 +47,7 @@ services:
       retries: 30
   test-redis:
     profiles: ["checks"]
-    image: redis:7-alpine
+    image: redis:7-alpine@sha256:8da19c7399dca900c6822a1cf30f9d2285585e2c4b457ff4095b0f4500054d3f
     ports: ["127.0.0.1:26381:6379"]
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
@@ -56,7 +56,7 @@ services:
       retries: 30
   api:
     profiles: ["app"]
-    image: portfolio-creative-api:stage4
+    image: portfolio-creative-api:${SHOWCASE_IMAGE_TAG:-stage4}
     build:
       context: .
       dockerfile: backend/Dockerfile
@@ -75,7 +75,7 @@ services:
   worker:
     pull_policy: never
     profiles: ["app"]
-    image: portfolio-creative-api:stage4
+    image: portfolio-creative-api:${SHOWCASE_IMAGE_TAG:-stage4}
     environment: *demo-env
     command: ["dramatiq", "app.workers.tasks", "--processes", "1", "--threads", "2"]
     volumes: ["demo_media:/workspace/runtime/media"]
@@ -84,7 +84,7 @@ services:
   recovery:
     pull_policy: never
     profiles: ["app"]
-    image: portfolio-creative-api:stage4
+    image: portfolio-creative-api:${SHOWCASE_IMAGE_TAG:-stage4}
     environment: *demo-env
     command: ["python", "-m", "app.workers.recovery"]
     depends_on:

@@ -14,7 +14,7 @@ def main():
     parser.add_argument("-k", default=None)
     args = parser.parse_args()
     env = os.environ.copy()
-    env.update(PYTHONPATH=os.pathsep.join([str(ROOT/"backend"),str(ROOT)]), PYTHONDONTWRITEBYTECODE="1")
+    env.update(PYTHONPATH=os.pathsep.join([str(ROOT/"backend"),str(ROOT),env.get("PYTHONPATH","")]), PYTHONDONTWRITEBYTECODE="1")
     (ROOT/"runtime").mkdir(exist_ok=True)
     if not args.postgres_only:
         subprocess.run([sys.executable,"-m","pytest","backend/tests","--junitxml=runtime/source-validation.xml"],cwd=ROOT,env=env,check=True)

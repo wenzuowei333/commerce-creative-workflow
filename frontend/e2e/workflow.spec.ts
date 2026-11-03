@@ -37,6 +37,18 @@ async function prepare(page: Page, label: string) {
   await expect(page.getByRole("heading", { name: "生成商品图片" })).toBeVisible();
 }
 
+test.beforeEach(async ({ context }) => {
+  await context.route("**/*", async route => {
+    const url = new URL(route.request().url());
+    if (["data:", "blob:", "about:"].includes(url.protocol) || (url.hostname === "127.0.0.1" && ["18140", "18160"].includes(url.port))) {
+      await route.continue();
+    } else {
+      await route.abort();
+      throw new Error("Unexpected external browser request");
+    }
+  });
+});
+
 test.beforeAll(async () => { await mkdir(output, { recursive: true }); });
 
 test("four successes and one failure survive reload, then only failed item retries", async ({ page }) => {

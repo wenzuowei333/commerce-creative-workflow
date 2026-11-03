@@ -8,3 +8,7 @@ runtime
 
 **/dist
 **/.pytest_cache
+
+**/.pytest_cache
+ci
+.github
