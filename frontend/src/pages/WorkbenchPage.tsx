@@ -38,6 +38,7 @@ export function WorkbenchPage() {
 
   const maxStep = deriveWorkspaceStep(workspace.data);
   const selectProduct = (productId: string) => {
+    if (productId === selectedId) return;
     setSearchParams({ product: productId });
     setActiveStep(1);
   };

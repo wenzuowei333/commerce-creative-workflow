@@ -1,0 +1,2841 @@
+{
+  "scope": "Actual clean-checkout Python installation and npm lock metadata, including optional platform entries; no ownership grant. Dependencies themselves are not copied into the candidate.",
+  "python": [
+    {
+      "name": "aiosqlite",
+      "version": "0.22.1",
+      "license_expression": null,
+      "license_classifiers": [
+        "MIT License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "aiosqlite-0.22.1.dist-info/licenses/LICENSE",
+          "sha256": "ab0c171dc3ef8bf325a84bb77d855421f2611335ddf6e08816b2922c4edc0f76"
+        }
+      ]
+    },
+    {
+      "name": "alembic",
+      "version": "1.18.5",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "alembic-1.18.5.dist-info/licenses/LICENSE",
+          "sha256": "6e68d94a03a0e3e327ddf3e86d1ebedc14eece3922022618fc246a36296fd0cc"
+        }
+      ]
+    },
+    {
+      "name": "annotated-doc",
+      "version": "0.0.5",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "annotated_doc-0.0.5.dist-info/licenses/LICENSE",
+          "sha256": "fff170779a6acbf65abdb405c087f1cee1786691e4a96a4034517e4a504a0cdf"
+        }
+      ]
+    },
+    {
+      "name": "annotated-types",
+      "version": "0.8.0",
+      "license_expression": "MIT",
+      "license_classifiers": [
+        "MIT License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "annotated_types-0.8.0.dist-info/licenses/LICENSE",
+          "sha256": "fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d"
+        }
+      ]
+    },
+    {
+      "name": "anyio",
+      "version": "4.16.0",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "anyio-4.16.0.dist-info/licenses/LICENSE",
+          "sha256": "5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0"
+        }
+      ]
+    },
+    {
+      "name": "argon2-cffi",
+      "version": "25.1.0",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "argon2_cffi-25.1.0.dist-info/licenses/LICENSE",
+          "sha256": "b6944d386e87ccf49d9632da083685a4b7624733e686a7fe283dd2d428341d77"
+        }
+      ]
+    },
+    {
+      "name": "argon2-cffi-bindings",
+      "version": "26.1.0",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "argon2_cffi_bindings-26.1.0.dist-info/licenses/LICENSE",
+          "sha256": "88707653d5414f2242d597302a769565107ac139817b8ca321b3928cc1346c50"
+        }
+      ]
+    },
+    {
+      "name": "certifi",
+      "version": "2026.10.23",
+      "license_expression": "MPL-2.0",
+      "license_classifiers": [
+        "Mozilla Public License 2.0 (MPL 2.0)"
+      ],
+      "installed_license_files": [
+        {
+          "path": "certifi-2026.10.23.dist-info/licenses/LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+        }
+      ]
+    },
+    {
+      "name": "cffi",
+      "version": "2.1.1",
+      "license_expression": "MIT-0",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "cffi-2.1.1.dist-info/licenses/LICENSE",
+          "sha256": "5ba24ddc57067f9249add644c3afc41a5d6dc37e23433ef759d95df370b0af63"
+        }
+      ]
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "charset_normalizer-3.5.2.dist-info/licenses/LICENSE",
+          "sha256": "6d0d41bfe170ac6c7dc248c9a63e254d0fb45a60d50a8257d0af92c6e249b887"
+        }
+      ]
+    },
+    {
+      "name": "click",
+      "version": "8.5.0",
+      "license_expression": "BSD-3-Clause",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "click-8.5.0.dist-info/licenses/LICENSE.txt",
+          "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d"
+        }
+      ]
+    },
+    {
+      "name": "cos_python_sdk_v5",
+      "version": "1.9.44",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "cos_python_sdk_v5-1.9.44.dist-info/licenses/LICENSE",
+          "sha256": "373d1e73b0f80a58213dfae1868e2c75cdb3ff33a14cd36123ce63cb1d42c3c1"
+        }
+      ]
+    },
+    {
+      "name": "coverage",
+      "version": "7.17.0",
+      "license_expression": "Apache-2.0",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "coverage-7.17.0.dist-info/licenses/LICENSE.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "coverage-7.17.0.dist-info/licenses/NOTICE.txt",
+          "sha256": "80e177ab397d5f332954693a52abc1b34b06c5792dd57297608b6d68a2f6af11"
+        }
+      ]
+    },
+    {
+      "name": "crcmod",
+      "version": "1.7",
+      "license_expression": "MIT",
+      "license_classifiers": [
+        "MIT License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "crcmod-1.7.dist-info/licenses/LICENSE",
+          "sha256": "89480768826f408daea1f3caff0509c2cc9606e10f6bb0ccfd12a3d604842c35"
+        }
+      ]
+    },
+    {
+      "name": "dramatiq",
+      "version": "1.18.0",
+      "license_expression": null,
+      "license_classifiers": [
+        "GNU Lesser General Public License v3 or later (LGPLv3+)"
+      ],
+      "installed_license_files": [
+        {
+          "path": "dramatiq-1.18.0.dist-info/licenses/COPYING",
+          "sha256": "e60707cef946c3eaf151b081228192ae64f92b32a657b734039bd93f08691056"
+        },
+        {
+          "path": "dramatiq-1.18.0.dist-info/licenses/COPYING.LESSER",
+          "sha256": "ea8af5e789cb2d4e9b10bce3874982ade163b749b6bfbdb32e2df21c4d106de1"
+        }
+      ]
+    },
+    {
+      "name": "fastapi",
+      "version": "0.139.2",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "fastapi-0.139.2.dist-info/licenses/LICENSE",
+          "sha256": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e"
+        }
+      ]
+    },
+    {
+      "name": "greenlet",
+      "version": "3.5.6",
+      "license_expression": "MIT AND PSF-2.0",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "greenlet-3.5.6.dist-info/licenses/LICENSE",
+          "sha256": "769831d6e5dfaf2c20802faccff1fafb4c2025dd8f6253dfa47fcad59d4d0979"
+        },
+        {
+          "path": "greenlet-3.5.6.dist-info/licenses/LICENSE.PSF",
+          "sha256": "e5ff3c23c110e494cd7d736c10fd96d462457bafeca310840db6527298c7d46b"
+        }
+      ]
+    },
+    {
+      "name": "h11",
+      "version": "0.16.0",
+      "license_expression": "MIT",
+      "license_classifiers": [
+        "MIT License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "h11-0.16.0.dist-info/licenses/LICENSE.txt",
+          "sha256": "37db5bb85926db28a427a25867f10b1232003aea1be69ccb851138adb8e6f361"
+        }
+      ]
+    },
+    {
+      "name": "httpcore",
+      "version": "1.0.9",
+      "license_expression": "BSD-3-Clause",
+      "license_classifiers": [
+        "BSD License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "httpcore-1.0.9.dist-info/licenses/LICENSE.md",
+          "sha256": "fdcb59154c74cbaba16a11242f7740bea9f23d6feb5547917d8c5f94a80392a5"
+        }
+      ]
+    },
+    {
+      "name": "httptools",
+      "version": "0.9.0",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "httptools-0.9.0.dist-info/licenses/LICENSE",
+          "sha256": "f4573e7cb7676745fb5b8d36fa548aa93e391cfb6872ddacd65130c45ea6a92d"
+        },
+        {
+          "path": "httptools-0.9.0.dist-info/licenses/vendor/http-parser/LICENSE-MIT",
+          "sha256": "79e6ba8b687cb54786207342b9b6fcee0ac10218453ed9009b84d949b2233cc0"
+        },
+        {
+          "path": "httptools-0.9.0.dist-info/licenses/vendor/llhttp/LICENSE",
+          "sha256": "628168d68bb5a8a17e0bbefb3bd74e326e1edc20583d76f52f457c82c921867d"
+        }
+      ]
+    },
+    {
+      "name": "httpx",
+      "version": "0.28.1",
+      "license_expression": "BSD-3-Clause",
+      "license_classifiers": [
+        "BSD License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "httpx-0.28.1.dist-info/licenses/LICENSE.md",
+          "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d"
+        }
+      ]
+    },
+    {
+      "name": "idna",
+      "version": "3.20",
+      "license_expression": "BSD-3-Clause",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "idna-3.20.dist-info/licenses/LICENSE.md",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+        }
+      ]
+    },
+    {
+      "name": "iniconfig",
+      "version": "2.3.1",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "iniconfig-2.3.1.dist-info/licenses/LICENSE",
+          "sha256": "3409fa91f7ace557894632676656e32264fe5ef7581535725dc9a23774551bd4"
+        }
+      ]
+    },
+    {
+      "name": "Mako",
+      "version": "1.4.3",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "mako-1.4.3.dist-info/licenses/LICENSE",
+          "sha256": "8c1d171bc5d341ad9cd33d5e2c39b96a82c7bd49b3ae89a470c37e5822232054"
+        }
+      ]
+    },
+    {
+      "name": "MarkupSafe",
+      "version": "3.0.4",
+      "license_expression": "BSD-3-Clause",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "markupsafe-3.0.4.dist-info/licenses/LICENSE.txt",
+          "sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea"
+        }
+      ]
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "license_expression": "Apache-2.0 OR BSD-2-Clause",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "packaging-26.3.dist-info/licenses/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "path": "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "packaging-26.3.dist-info/licenses/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        }
+      ]
+    },
+    {
+      "name": "pillow",
+      "version": "12.3.0",
+      "license_expression": "MIT-CMU",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "pillow-12.3.0.dist-info/licenses/LICENSE",
+          "sha256": "dda12a98c1979cf3d94df1cff45d27a4cb3f04a60c76f76902ac54cac03ec0ce"
+        }
+      ]
+    },
+    {
+      "name": "pluggy",
+      "version": "1.7.0",
+      "license_expression": "MIT",
+      "license_classifiers": [
+        "MIT License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "pluggy-1.7.0.dist-info/licenses/LICENSE",
+          "sha256": "d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606"
+        }
+      ]
+    },
+    {
+      "name": "prometheus_client",
+      "version": "0.25.0",
+      "license_expression": "Apache-2.0 AND BSD-2-Clause",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "prometheus_client-0.25.0.dist-info/licenses/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        },
+        {
+          "path": "prometheus_client-0.25.0.dist-info/licenses/NOTICE",
+          "sha256": "4efa1874aeaa60f365f5797e617f1ff933e15e508eaf751e9848ed4413d7a7ae"
+        }
+      ]
+    },
+    {
+      "name": "psycopg",
+      "version": "3.3.4",
+      "license_expression": "LGPL-3.0-only",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "psycopg-3.3.4.dist-info/licenses/LICENSE.txt",
+          "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+        }
+      ]
+    },
+    {
+      "name": "psycopg-binary",
+      "version": "3.3.4",
+      "license_expression": "LGPL-3.0-only",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "psycopg_binary-3.3.4.dist-info/licenses/LICENSE.txt",
+          "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+        }
+      ]
+    },
+    {
+      "name": "pycparser",
+      "version": "3.12",
+      "license_expression": "BSD-3-Clause",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "pycparser-3.12.dist-info/licenses/LICENSE",
+          "sha256": "0a9e78156ae8b96caf1b4f11ac2df424b83de29736f9e757630548a6272fdf90"
+        }
+      ]
+    },
+    {
+      "name": "pycryptodome",
+      "version": "4.3.0",
+      "license_expression": "BSD-2-Clause AND Unlicense AND MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "pycryptodome-4.3.0.dist-info/licenses/LICENSE.rst",
+          "sha256": "a260ad1a6f7137cfc79d371529818ec279a27a97bd86e02ebbf1900a23087955"
+        },
+        {
+          "path": "pycryptodome-4.3.0.dist-info/licenses/src/mldsa-native/LICENSE",
+          "sha256": "22f7173776d0a36d3f13ec1f45d51e0502e67d17e384bddf39690d833974ff93"
+        },
+        {
+          "path": "pycryptodome-4.3.0.dist-info/licenses/src/mlkem-native/LICENSE",
+          "sha256": "1c730e3c2cd4f70e058519ef3e910d8bdd4ed822ae2ce689f3c63d32fc52314b"
+        }
+      ]
+    },
+    {
+      "name": "pydantic",
+      "version": "2.14.2",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "pydantic-2.14.2.dist-info/licenses/LICENSE",
+          "sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3"
+        }
+      ]
+    },
+    {
+      "name": "pydantic-settings",
+      "version": "2.14.2",
+      "license_expression": "MIT",
+      "license_classifiers": [
+        "MIT License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "pydantic_settings-2.14.2.dist-info/licenses/LICENSE",
+          "sha256": "eb355a753e020346d33d83bf9769135b89fc610568ac531a01c295bcee7fd998"
+        }
+      ]
+    },
+    {
+      "name": "pydantic_core",
+      "version": "2.50.2",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "pydantic_core-2.50.2.dist-info/licenses/LICENSE",
+          "sha256": "2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a"
+        }
+      ]
+    },
+    {
+      "name": "Pygments",
+      "version": "2.21.0",
+      "license_expression": "BSD-2-Clause",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "pygments-2.21.0.dist-info/licenses/LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+        }
+      ]
+    },
+    {
+      "name": "pytest",
+      "version": "8.4.2",
+      "license_expression": "MIT",
+      "license_classifiers": [
+        "MIT License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "pytest-8.4.2.dist-info/licenses/LICENSE",
+          "sha256": "ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b"
+        }
+      ]
+    },
+    {
+      "name": "pytest-cov",
+      "version": "6.3.0",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "pytest_cov-6.3.0.dist-info/licenses/LICENSE",
+          "sha256": "835586ae156766a24e3c103fbc55d9af6b1a16df57ca932c97482a2737fd83d5"
+        }
+      ]
+    },
+    {
+      "name": "python-dotenv",
+      "version": "1.2.4",
+      "license_expression": "BSD-3-Clause",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "python_dotenv-1.2.4.dist-info/licenses/LICENSE",
+          "sha256": "80619b7049f08c81683ad0e01f08f257a840652dd71ee83146d36658c7d2c2b9"
+        }
+      ]
+    },
+    {
+      "name": "python-multipart",
+      "version": "0.0.32",
+      "license_expression": "Apache-2.0",
+      "license_classifiers": [
+        "Apache Software License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "python_multipart-0.0.32.dist-info/licenses/LICENSE.txt",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        }
+      ]
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.3",
+      "license_expression": "MIT",
+      "license_classifiers": [
+        "MIT License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "pyyaml-6.0.3.dist-info/licenses/LICENSE",
+          "sha256": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4"
+        }
+      ]
+    },
+    {
+      "name": "redis",
+      "version": "6.4.0",
+      "license_expression": "MIT",
+      "license_classifiers": [
+        "MIT License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "redis-6.4.0.dist-info/licenses/LICENSE",
+          "sha256": "a57b250a5bf03d7afe55b74063313f2adb7b00d546c0ab149a89398333fe3cc8"
+        }
+      ]
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2",
+      "license_expression": "Apache-2.0",
+      "license_classifiers": [
+        "Apache Software License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "requests-2.34.2.dist-info/licenses/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+        },
+        {
+          "path": "requests-2.34.2.dist-info/licenses/NOTICE",
+          "sha256": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc"
+        }
+      ]
+    },
+    {
+      "name": "ruff",
+      "version": "0.15.22",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "ruff-0.15.22.dist-info/licenses/LICENSE",
+          "sha256": "2597d854122b77ddc71971564ca2350a37608575ce324adc5650a2b2051c8f18"
+        }
+      ]
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "license_expression": "MIT",
+      "license_classifiers": [
+        "MIT License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "six-1.17.0.dist-info/LICENSE",
+          "sha256": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0"
+        }
+      ]
+    },
+    {
+      "name": "SQLAlchemy",
+      "version": "2.0.51",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "sqlalchemy-2.0.51.dist-info/licenses/LICENSE",
+          "sha256": "e862bb5b904fb5513c3e14288d7a25a12eb0ecc7847a0a965d310e9a955e7cb9"
+        }
+      ]
+    },
+    {
+      "name": "starlette",
+      "version": "1.10.0",
+      "license_expression": "BSD-3-Clause",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "starlette-1.10.0.dist-info/licenses/LICENSE.md",
+          "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf"
+        }
+      ]
+    },
+    {
+      "name": "structlog",
+      "version": "25.5.0",
+      "license_expression": "MIT OR Apache-2.0",
+      "license_classifiers": [
+        "Apache Software License",
+        "MIT License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "structlog-25.5.0.dist-info/licenses/LICENSE-APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "structlog-25.5.0.dist-info/licenses/LICENSE-MIT",
+          "sha256": "2bc12bb94eec2ccea211daebb763235bec3169276197a7be1f858963db31c5dd"
+        },
+        {
+          "path": "structlog-25.5.0.dist-info/licenses/NOTICE",
+          "sha256": "274a71ae064275a87378f2a93ad2cf351b2929f016e280a33fc3c836a3f0f84c"
+        }
+      ]
+    },
+    {
+      "name": "typing-inspection",
+      "version": "0.4.4",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "typing_inspection-0.4.4.dist-info/licenses/LICENSE",
+          "sha256": "804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3"
+        }
+      ]
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "license_expression": "PSF-2.0",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+          "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+        }
+      ]
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "urllib3-2.8.0.dist-info/licenses/LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+        }
+      ]
+    },
+    {
+      "name": "uvicorn",
+      "version": "0.51.0",
+      "license_expression": "BSD-3-Clause",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "uvicorn-0.51.0.dist-info/licenses/LICENSE.md",
+          "sha256": "efe1acf3e62fb99c288b0ec73e5a773b7268ef4320fe757ea994214e4b63c371"
+        }
+      ]
+    },
+    {
+      "name": "uvloop",
+      "version": "0.23.0",
+      "license_expression": "MIT License",
+      "license_classifiers": [
+        "Apache Software License",
+        "MIT License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "uvloop-0.23.0.dist-info/licenses/LICENSE-APACHE",
+          "sha256": "377025287798f9dcd819e1f826fa5fc5e2f382528691ab0528c5cf8c8c282c27"
+        },
+        {
+          "path": "uvloop-0.23.0.dist-info/licenses/LICENSE-MIT",
+          "sha256": "6dd4c399f26de043d77a2ad7e31db4cb5bf08ea8368b0a42d6e158635cc8ab62"
+        }
+      ]
+    },
+    {
+      "name": "watchfiles",
+      "version": "1.3.0",
+      "license_expression": "MIT",
+      "license_classifiers": [
+        "MIT License"
+      ],
+      "installed_license_files": [
+        {
+          "path": "watchfiles-1.3.0.dist-info/licenses/LICENSE",
+          "sha256": "4fd78355b67ce2677ede9fb6f63a250f377bb7e22088136a5f4699adb4bc069f"
+        }
+      ]
+    },
+    {
+      "name": "websockets",
+      "version": "17.4",
+      "license_expression": "BSD-3-Clause",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "websockets-17.4.dist-info/licenses/LICENSE",
+          "sha256": "3d6a0c050d8bec52fabad502e45fb25bd02bcadbd70dea34d447b6a0ff4e6da8"
+        }
+      ]
+    },
+    {
+      "name": "xmltodict",
+      "version": "1.0.4",
+      "license_expression": "MIT",
+      "license_classifiers": [],
+      "installed_license_files": [
+        {
+          "path": "xmltodict-1.0.4.dist-info/licenses/LICENSE",
+          "sha256": "d66d5eb8f83a0ba21d3dd04318b8817588e8764daabea852d1035e3f07ffda55"
+        }
+      ]
+    }
+  ],
+  "npm_lock_entries": [
+    {
+      "package_path": "node_modules/@adobe/css-tools",
+      "version": "4.5.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "326ff3850062286003ff4cbdaa8f61764e128f9a6532431bccf97e4e2bd75059"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@asamuzakjp/css-color",
+      "version": "5.1.11",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "bd4539377980dd797fc6a51d90e664e52b2b2625b2158f01d4c68b5fe107eacb"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@asamuzakjp/dom-selector",
+      "version": "7.1.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "7cdf9db3b91cc77b9ec947ad0c7126140f00e34528b67c3a58e9fc1a98055e14"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@asamuzakjp/generational-cache",
+      "version": "1.0.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "b4206276487160066d7006579da64b1e104f0db639897d5b91babdd0df8165e1"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@asamuzakjp/nwsapi",
+      "version": "2.3.9",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "9b0ffd74f2cde7528141cc314ece705490d11054805da4a01ee6149498951b8f"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@babel/code-frame",
+      "version": "7.29.7",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@babel/helper-validator-identifier",
+      "version": "7.29.7",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@babel/runtime",
+      "version": "7.29.10",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@bramus/specificity",
+      "version": "2.4.3",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "ae842a63dd9bc829c95a2ec22dda25a08e422a368b71dbca67a45cde7c4a4b81"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@csstools/color-helpers",
+      "version": "6.1.2",
+      "license": "MIT-0",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "947e32047a166cd05f04e45938d172b412c07cbee0b9735afd14bae30e02c2f6"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@csstools/css-calc",
+      "version": "3.4.3",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "d00d032f517721b45c56c70c46bf904ebb71ad313df4d4db7722266b38069665"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@csstools/css-color-parser",
+      "version": "4.2.7",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "d00d032f517721b45c56c70c46bf904ebb71ad313df4d4db7722266b38069665"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@csstools/css-parser-algorithms",
+      "version": "4.0.2",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "d00d032f517721b45c56c70c46bf904ebb71ad313df4d4db7722266b38069665"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@csstools/css-syntax-patches-for-csstree",
+      "version": "1.1.16",
+      "license": "MIT-0",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "947e32047a166cd05f04e45938d172b412c07cbee0b9735afd14bae30e02c2f6"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@csstools/css-tokenizer",
+      "version": "4.0.2",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "d00d032f517721b45c56c70c46bf904ebb71ad313df4d4db7722266b38069665"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@emnapi/core",
+      "version": "1.11.1",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@emnapi/runtime",
+      "version": "1.11.1",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@emnapi/wasi-threads",
+      "version": "1.2.2",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@exodus/bytes",
+      "version": "1.16.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "dbffd380d59504ba19fcf87ff5a1a33c37edf66d5b09966b0ad5368ab87bc2af"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@jridgewell/sourcemap-codec",
+      "version": "1.6.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@napi-rs/wasm-runtime",
+      "version": "1.2.7",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@noble/hashes",
+      "version": "2.2.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": false,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "4f221aee6e072336700c408c68ab3b96a3fc09f6aebe6f48f1bd99e5ef13faec"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@oxc-project/types",
+      "version": "0.139.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "95ced5ecf1133fbf41d409b5555c86c344f83f3b019926057ddbc07cfdcc27b3"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@playwright/test",
+      "version": "1.61.1",
+      "license": "Apache-2.0",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb"
+        },
+        {
+          "name": "NOTICE",
+          "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@rolldown/binding-android-arm64",
+      "version": "1.1.5",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@rolldown/binding-darwin-arm64",
+      "version": "1.1.5",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@rolldown/binding-darwin-x64",
+      "version": "1.1.5",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@rolldown/binding-freebsd-x64",
+      "version": "1.1.5",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@rolldown/binding-linux-arm-gnueabihf",
+      "version": "1.1.5",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@rolldown/binding-linux-arm64-gnu",
+      "version": "1.1.5",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@rolldown/binding-linux-arm64-musl",
+      "version": "1.1.5",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@rolldown/binding-linux-ppc64-gnu",
+      "version": "1.1.5",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@rolldown/binding-linux-s390x-gnu",
+      "version": "1.1.5",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@rolldown/binding-linux-x64-gnu",
+      "version": "1.1.5",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@rolldown/binding-linux-x64-musl",
+      "version": "1.1.5",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@rolldown/binding-openharmony-arm64",
+      "version": "1.1.5",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@rolldown/binding-wasm32-wasi",
+      "version": "1.1.5",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@rolldown/binding-win32-arm64-msvc",
+      "version": "1.1.5",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@rolldown/binding-win32-x64-msvc",
+      "version": "1.1.5",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@rolldown/pluginutils",
+      "version": "1.0.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "e1919b3b98b8bf6c1b99fcc60a0ed46027c97ac947432e1278446c9606f50161"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@standard-schema/spec",
+      "version": "1.1.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "653b779005a3a4d64a7288c940f7b9a0e8f0b1e0375f6aa6af9473caf131e564"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@tanstack/query-core",
+      "version": "5.101.4",
+      "license": "MIT",
+      "optional": false,
+      "dev": false,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "a405ee70c632bb938acb7ac5f210e814409b3760ea9d2329d8ed8ffcfd11a0e7"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@tanstack/react-query",
+      "version": "5.101.4",
+      "license": "MIT",
+      "optional": false,
+      "dev": false,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "a405ee70c632bb938acb7ac5f210e814409b3760ea9d2329d8ed8ffcfd11a0e7"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@testing-library/dom",
+      "version": "10.4.2",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "bf8fd38056b7606deccfcadb4d8ca1c210082d8ef5513426d2650daedc30bed3"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@testing-library/jest-dom",
+      "version": "7.0.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "bf8fd38056b7606deccfcadb4d8ca1c210082d8ef5513426d2650daedc30bed3"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@testing-library/jest-dom/node_modules/dom-accessibility-api",
+      "version": "0.6.3",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "0ffe67fe630169de46df2d29dc18f5857b4c98f0f95b0cd9e3c21fef51f9a9b8"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@testing-library/react",
+      "version": "16.3.2",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "9680978280d509520d2a7b51e93ffbf7d9ec2b9de4411a6989daba5b659048e0"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@testing-library/user-event",
+      "version": "14.6.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "b5a4028c49c48f820831421de69c8ea83d621a062914bf16739fd0703c7c9fba"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@tybys/wasm-util",
+      "version": "0.10.4",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@types/aria-query",
+      "version": "5.0.4",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@types/chai",
+      "version": "5.2.3",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@types/deep-eql",
+      "version": "4.0.2",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@types/estree",
+      "version": "1.0.10",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@types/react",
+      "version": "19.2.17",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@types/react-dom",
+      "version": "19.2.3",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-aix-ppc64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-darwin-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47"
+        },
+        {
+          "name": "NOTICE.txt",
+          "sha256": "f5c708b59114507b8b27b48181b6883d106bbca0c1634bbee45b5e344237b66b"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-darwin-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-freebsd-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-freebsd-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-linux-arm",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-linux-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-linux-loong64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-linux-mips64el",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-linux-ppc64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-linux-riscv64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-linux-s390x",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-linux-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-netbsd-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-netbsd-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-openbsd-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-openbsd-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-sunos-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-win32-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@typescript/typescript-win32-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/@vitejs/plugin-react",
+      "version": "6.0.3",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "29b68325fe026047d13e187b44c33b2acacf7dc647dec4583702e59f235e13b5"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@vitest/expect",
+      "version": "4.1.10",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@vitest/mocker",
+      "version": "4.1.10",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@vitest/pretty-format",
+      "version": "4.1.10",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@vitest/runner",
+      "version": "4.1.10",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@vitest/snapshot",
+      "version": "4.1.10",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@vitest/spy",
+      "version": "4.1.10",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/@vitest/utils",
+      "version": "4.1.10",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/ansi-regex",
+      "version": "5.0.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "license",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/ansi-styles",
+      "version": "5.2.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "license",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/aria-query",
+      "version": "5.3.0",
+      "license": "Apache-2.0",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "c8df456c7ccba74b959087dff494d4ac2a12dfb0400c08b46b2494a08a000567"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/assertion-error",
+      "version": "2.0.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "2130216d5ab4c02134f8247f32999feda0abe1eaf028218baeac445c19ce4cea"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/bidi-js",
+      "version": "1.1.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.txt",
+          "sha256": "49d4d143fed599deb502a0fe6e02f49832f87e9a3a4cd0502e469596d50faa6d"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/chai",
+      "version": "6.3.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "b181da80336ff9dd1043fc8be1a764d7382363433319aa872e4d2cb5ce2a3066"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/convert-source-map",
+      "version": "2.0.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "1fa6ee8bb95a81ae3d73a5bd074a3ac380ffec13697051063ca1a601921b91db"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/cookie",
+      "version": "1.1.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": false,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "c02110eedc16c7114f1a9bdc026c65626ce1d9c7e27fd51a8e0feee8a48a6858"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/css-tree",
+      "version": "3.2.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "719a251ceca49c057ea90a1152af6546b767ec88e6d573bb6324454267b32c22"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/css.escape",
+      "version": "1.5.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE-MIT.txt",
+          "sha256": "483acb265f182907d1caf6cff9c16c96f31325ed23792832cc5d8b12d5f88c8a"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/csstype",
+      "version": "3.2.3",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "11d55bd4541c75ee7879547ac49089c489163dae49551389713c3d026cab383e"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/data-urls",
+      "version": "7.0.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.txt",
+          "sha256": "528eec83cb836a0adda9f8fc3d6a2a70a710d6cc0be9a155f92212c8df28acfa"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/decimal.js",
+      "version": "10.6.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/dequal",
+      "version": "2.0.3",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "license",
+          "sha256": "306fa513e39b23a6e8747520de761809d206b99800ef41907b530226574c59ae"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/detect-libc",
+      "version": "2.1.2",
+      "license": "Apache-2.0",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/dom-accessibility-api",
+      "version": "0.5.16",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "0ffe67fe630169de46df2d29dc18f5857b4c98f0f95b0cd9e3c21fef51f9a9b8"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/entities",
+      "version": "9.0.0",
+      "license": "BSD-2-Clause",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "cb992345949ccd6e8394b2cd6c465f7b897c864f845937dbf64e8997f389e164"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/es-module-lexer",
+      "version": "2.3.2",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "8a4b6c44eebfb026d23719a348145a661a555568dbfdc11618ff2d0dd9306b00"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/estree-walker",
+      "version": "3.0.3",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "8a6dcbabe7179f9c8489c08a7d874d0f1e093ae7449e03756ccf87cb9d0e296e"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/expect-type",
+      "version": "1.4.0",
+      "license": "Apache-2.0",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "7c6cc83c84eaa249a85bf12fe3eedd831bb50c696e8890b5248223ae68c7b408"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/fdir",
+      "version": "6.5.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "9a39f2aadab11a3697edd668ff2d8ad885b649737b7ab4d3bf12b34e5ada0c86"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/fsevents",
+      "version": "2.3.2",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "2a8a5d6197bb97a018b8a190dd3ed853d750ca87c8e80c17aad41d6c6ff448e1"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/html-encoding-sniffer",
+      "version": "6.0.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.txt",
+          "sha256": "528eec83cb836a0adda9f8fc3d6a2a70a710d6cc0be9a155f92212c8df28acfa"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/indent-string",
+      "version": "4.0.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "license",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/is-potential-custom-element-name",
+      "version": "1.0.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE-MIT.txt",
+          "sha256": "483acb265f182907d1caf6cff9c16c96f31325ed23792832cc5d8b12d5f88c8a"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/js-tokens",
+      "version": "4.0.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "2213d91c606205c71eb051a199478cdc2adde945893404d7f1421436dd6d5cc1"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/jsdom",
+      "version": "29.1.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.txt",
+          "sha256": "242d37e7cab25cbafc36cc973ee88f9345fddf066afe4f72b7ac3d9ad4e24cce"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/lightningcss",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/lightningcss-android-arm64",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/lightningcss-darwin-arm64",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/lightningcss-darwin-x64",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/lightningcss-freebsd-x64",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/lightningcss-linux-arm-gnueabihf",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/lightningcss-linux-arm64-gnu",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/lightningcss-linux-arm64-musl",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/lightningcss-linux-x64-gnu",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/lightningcss-linux-x64-musl",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/lightningcss-win32-arm64-msvc",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/lightningcss-win32-x64-msvc",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/lru-cache",
+      "version": "11.5.3",
+      "license": "BlueOak-1.0.0",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "8a1af140fdfbf5afd3df27f7e662f989c5b963a300020dfafce42033cae9e004"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/lucide-react",
+      "version": "1.25.0",
+      "license": "ISC",
+      "optional": false,
+      "dev": false,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/lz-string",
+      "version": "1.5.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "433fc9dfe659dbfb1e91eed8351f13651e97bfa3ac6d03394c3d63f61d4bbc80"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/magic-string",
+      "version": "0.30.21",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "1cbe51b907662f6cb1492b16c359384a595180bf0e4d101603ed525e75c4e484"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/mdn-data",
+      "version": "2.27.1",
+      "license": "CC0-1.0",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "36ffd9dc085d529a7e60e1276d73ae5a030b020313e6c5408593a6ae2af39673"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/min-indent",
+      "version": "1.0.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "license",
+          "sha256": "9638fa87f845af6cecc56fab498c1f74f4a98522d3b53377bedcbdb44b5a8dcc"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/nanoid",
+      "version": "3.3.20",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "da4db1480d9beea3483a2eda5c53b22238d0827d57da162b48f122e04d2d9987"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/obug",
+      "version": "2.2.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "ee48679d379ca6b4493d5e231094d85f818dd9be40b1a4f234fb7ff657ee35d9"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/parse5",
+      "version": "8.1.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "8c535800331e1e4439835555b3f9edc7fe9dee2fab0d8bbbd5a982e8b8343d4d"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/pathe",
+      "version": "2.0.3",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "52e92576851154bad7737e90cc72818936f43665cb0e3f7428ed8edc8cc5709b"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/picocolors",
+      "version": "1.1.1",
+      "license": "ISC",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "6582629e2979466878f6014313dcc2f3756c9616148682227ce3063dde310750"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/picomatch",
+      "version": "4.0.7",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "d0cd141b0c322fded5dfad1d4645bb2fedfc05b7321fe1009469638190d59ef9"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/playwright",
+      "version": "1.61.1",
+      "license": "Apache-2.0",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "ThirdPartyNotices.txt",
+          "sha256": "b17ac0bd6f4b8207e440639cc8e0ba1bf1d9eaf9b12236764ab93b346c7abd8e"
+        },
+        {
+          "name": "LICENSE",
+          "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb"
+        },
+        {
+          "name": "NOTICE",
+          "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/playwright-core",
+      "version": "1.61.1",
+      "license": "Apache-2.0",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "ThirdPartyNotices.txt",
+          "sha256": "a549d329bad8806fe279f0ecae0fc0270dec7e7c2dc8ec10f90e394f7c32b144"
+        },
+        {
+          "name": "LICENSE",
+          "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb"
+        },
+        {
+          "name": "NOTICE",
+          "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/postcss",
+      "version": "8.5.32",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "5be1f3465bba68a626777f984878814aaf35e7ef8e9fd314d469bcf887050fb8"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/pretty-format",
+      "version": "27.5.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/punycode",
+      "version": "2.3.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE-MIT.txt",
+          "sha256": "483acb265f182907d1caf6cff9c16c96f31325ed23792832cc5d8b12d5f88c8a"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/react",
+      "version": "19.2.8",
+      "license": "MIT",
+      "optional": false,
+      "dev": false,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/react-dom",
+      "version": "19.2.8",
+      "license": "MIT",
+      "optional": false,
+      "dev": false,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/react-is",
+      "version": "17.0.2",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/react-router",
+      "version": "7.18.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": false,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "77c9ee6a9c5d5782fb0c50b50d101189116314c14f7df0a1b0d385fc96a7ba49"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/react-router-dom",
+      "version": "7.18.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": false,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "77c9ee6a9c5d5782fb0c50b50d101189116314c14f7df0a1b0d385fc96a7ba49"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/redent",
+      "version": "3.0.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "license",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/require-from-string",
+      "version": "2.0.2",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "license",
+          "sha256": "6ee0feb1f6ef996ff5a68600f8cf98909cf412d39ef3cdceaefd87d636fa1b7f"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/rolldown",
+      "version": "1.1.5",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/saxes",
+      "version": "6.0.0",
+      "license": "ISC",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/scheduler",
+      "version": "0.27.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": false,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/set-cookie-parser",
+      "version": "2.7.3",
+      "license": "MIT",
+      "optional": false,
+      "dev": false,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "c5c6c5183a789d122f267c405f685037efb87e27fcde28ab1dd7378a2d2f5962"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/siginfo",
+      "version": "2.0.0",
+      "license": "ISC",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "3bdddf0b9b08aaa2fe4365b803fc958ed32c0597ca0bd727be8d9fcb8b248d18"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/source-map-js",
+      "version": "1.2.2",
+      "license": "BSD-3-Clause",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "6cb0631f71c7749763fd3dd1d5bee52dd1070ec17f2edc1710079ad070bd2fbd"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/stackback",
+      "version": "0.0.2",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/std-env",
+      "version": "4.3.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/strip-indent",
+      "version": "3.0.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "license",
+          "sha256": "48da2f39e100d4085767e94966b43f4fa95ff6a0698fba57ed460914e35f94a0"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/symbol-tree",
+      "version": "3.2.4",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "9ea1eccdabe469767a9edb9249a840b2461cf91b2434bf8a3e2fc1f414311cb1"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/tinybench",
+      "version": "2.9.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "cebc084d54e6dd99e53292ddb4bc1cdb63d9bfcd9ce438fe3aa6eb106d79e2ea"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/tinyexec",
+      "version": "1.3.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "f95f668fe64081ddb4153b322e34fdd719b991285ed08177d5ad7133b7988d92"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/tinyglobby",
+      "version": "0.2.17",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "22c68811e174cbbfb3813d4135918df4f540959c14d872e601d9abe83d3cde8f"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/tinyrainbow",
+      "version": "3.2.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/tldts",
+      "version": "7.4.19",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "c64182d48160db948b6aa97a984f1a32974ce4d2053900361264cd33853796cb"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/tldts-core",
+      "version": "7.4.20",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "c64182d48160db948b6aa97a984f1a32974ce4d2053900361264cd33853796cb"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/tough-cookie",
+      "version": "6.0.2",
+      "license": "BSD-3-Clause",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "22ec6791c91ba42c0516a05f4cbdde019aae4687f8a38c5ca7e8a69ee68f851d"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/tr46",
+      "version": "6.0.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "499d6d466d064e0460427967a344e2a32fcb86ea8c6cd1a285ec4f1fa03fba67"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/tslib",
+      "version": "2.9.1",
+      "license": "0BSD",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": []
+    },
+    {
+      "package_path": "node_modules/typescript",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47"
+        },
+        {
+          "name": "NOTICE.txt",
+          "sha256": "f5c708b59114507b8b27b48181b6883d106bbca0c1634bbee45b5e344237b66b"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/undici",
+      "version": "7.30.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "a6db8096b2707bc0102d256917d4d33f298ba36d8c3f25de067a2b5bb379db27"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/vite",
+      "version": "8.1.5",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "b1d741c26b53de1bbc0d4d7d3365b79888f9fe511527544a8a7b8e24dec43147"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/vite/node_modules/fsevents",
+      "version": "2.3.3",
+      "license": "MIT",
+      "optional": true,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "2a8a5d6197bb97a018b8a190dd3ed853d750ca87c8e80c17aad41d6c6ff448e1"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/vitest",
+      "version": "4.1.10",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "881d660c26831481b697e39724d4a35c9f86e07b67156d4aeb693a0b39910435"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/w3c-xmlserializer",
+      "version": "5.0.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "ab654de803cdaa9e2819ab2e934bdf7f757e308649ec231d78e80e92425cdc34"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/webidl-conversions",
+      "version": "8.0.1",
+      "license": "BSD-2-Clause",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "a889cc4dbee2ae172c179856b25d75b0b7a5a136e1b97109b9b590b2ff1a879c"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/whatwg-mimetype",
+      "version": "5.0.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.txt",
+          "sha256": "528eec83cb836a0adda9f8fc3d6a2a70a710d6cc0be9a155f92212c8df28acfa"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/whatwg-url",
+      "version": "16.0.1",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.txt",
+          "sha256": "db480f236292a093e77a83c35431a8496624e1e664a3547768a9ce2bdde39877"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/why-is-node-running",
+      "version": "2.3.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "6a134e51aa31496c15a741592fc5d782b2dbf8d8b6b8524e15c8520ae0cd6374"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/xml-name-validator",
+      "version": "5.0.0",
+      "license": "Apache-2.0",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE.txt",
+          "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9"
+        }
+      ]
+    },
+    {
+      "package_path": "node_modules/xmlchars",
+      "version": "2.2.0",
+      "license": "MIT",
+      "optional": false,
+      "dev": true,
+      "installed_license_files": [
+        {
+          "name": "LICENSE",
+          "sha256": "45d196313c2647d313cc65ca9b093d2d6974b64d35ee7346f2c60c9d518dff2c"
+        }
+      ]
+    }
+  ]
+}
