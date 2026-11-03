@@ -1,0 +1,124 @@
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(420px, 0.8fr);
+  background: #fff;
+}
+
+.visual {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #e6eceb;
+}
+
+.visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visualCopy {
+  position: absolute;
+  inset: 44px auto auto 48px;
+  max-width: 380px;
+  color: #15312d;
+}
+
+.visualCopy span {
+  display: inline-flex;
+  padding: 5px 9px;
+  color: #fff;
+  background: #087f73;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.visualCopy h2 {
+  margin: 14px 0 8px;
+  font-size: 31px;
+  line-height: 1.25;
+}
+
+.visualCopy p {
+  margin: 0;
+  color: #4f6662;
+  line-height: 1.6;
+}
+
+.loginPane {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 44px;
+}
+
+.formWrap {
+  width: min(390px, 100%);
+}
+
+.mark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: var(--teal);
+  border-radius: 7px;
+}
+
+.formWrap h1 {
+  margin: 25px 0 8px;
+  font-size: 28px;
+}
+
+.formWrap > p {
+  margin: 0 0 30px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.form {
+  display: grid;
+  gap: 18px;
+}
+
+.submit {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.error {
+  margin: 0;
+  padding: 10px 12px;
+  color: var(--red);
+  background: #fcedeb;
+  border: 1px solid #f0c8c4;
+  border-radius: var(--radius);
+  font-size: 13px;
+}
+
+.security {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 24px;
+  color: var(--subtle);
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    display: none;
+  }
+
+  .loginPane {
+    padding: 30px 22px;
+  }
+}

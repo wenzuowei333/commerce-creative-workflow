@@ -1,0 +1,123 @@
+.segmented {
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+}
+
+.segmented button {
+  min-width: 86px;
+  min-height: 40px;
+  border: 0;
+  border-right: 1px solid var(--line);
+  color: var(--muted);
+  background: #fff;
+  font-weight: 650;
+}
+
+.segmented button:last-child {
+  border-right: 0;
+}
+
+.segmented .selected {
+  color: var(--teal-strong);
+  background: var(--teal-soft);
+}
+
+.promptSetup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 22px;
+  padding: 22px 0;
+  border-block: 1px solid var(--line);
+}
+
+.choiceGroup {
+  display: grid;
+  gap: 8px;
+}
+
+.choiceGroup > span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.direction {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.directionHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  align-items: start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.directionHeader h3 {
+  margin: 0 0 5px;
+  font-size: 17px;
+}
+
+.directionHeader p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.promptFields {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 14px;
+}
+
+.variantList {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.variantRow {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+}
+
+.variantRow span {
+  padding-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.regenerate {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+@media (max-width: 720px) {
+  .promptFields,
+  .directionHeader {
+    grid-template-columns: 1fr;
+  }
+
+  .variantRow {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .variantRow span {
+    padding-top: 0;
+  }
+
+  .regenerate {
+    grid-template-columns: 1fr;
+  }
+}

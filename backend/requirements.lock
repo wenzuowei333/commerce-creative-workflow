@@ -1,0 +1,127 @@
+alembic==1.18.5
+    # via commerce-creative-workflow-backend (backend/pyproject.toml)
+annotated-doc==0.0.5
+    # via fastapi
+annotated-types==0.8.0
+    # via pydantic
+anyio==4.16.0
+    # via
+    #   httpx
+    #   starlette
+    #   watchfiles
+argon2-cffi==25.1.0
+    # via commerce-creative-workflow-backend (backend/pyproject.toml)
+argon2-cffi-bindings==26.1.0
+    # via argon2-cffi
+certifi==2026.10.23
+    # via
+    #   httpcore
+    #   httpx
+    #   requests
+cffi==2.1.1
+    # via argon2-cffi-bindings
+charset-normalizer==3.5.2
+    # via requests
+click==8.5.0
+    # via uvicorn
+cos-python-sdk-v5==1.9.44
+    # via commerce-creative-workflow-backend (backend/pyproject.toml)
+crcmod==1.7
+    # via cos-python-sdk-v5
+dramatiq==1.18.0
+    # via commerce-creative-workflow-backend (backend/pyproject.toml)
+fastapi==0.139.2
+    # via commerce-creative-workflow-backend (backend/pyproject.toml)
+h11==0.16.0
+    # via
+    #   httpcore
+    #   uvicorn
+httpcore==1.0.9
+    # via httpx
+httptools==0.9.0
+    # via uvicorn
+httpx==0.28.1
+    # via commerce-creative-workflow-backend (backend/pyproject.toml)
+idna==3.20
+    # via
+    #   anyio
+    #   httpx
+    #   requests
+mako==1.4.3
+    # via alembic
+markupsafe==3.0.4
+    # via mako
+pillow==12.3.0
+    # via commerce-creative-workflow-backend (backend/pyproject.toml)
+prometheus-client==0.25.0
+    # via
+    #   commerce-creative-workflow-backend (backend/pyproject.toml)
+    #   dramatiq
+psycopg==3.3.4
+    # via commerce-creative-workflow-backend (backend/pyproject.toml)
+psycopg-binary==3.3.4
+    # via psycopg
+pycparser==3.12
+    # via cffi
+pycryptodome==4.3.0
+    # via cos-python-sdk-v5
+pydantic==2.14.2
+    # via
+    #   fastapi
+    #   pydantic-settings
+pydantic-core==2.50.2
+    # via pydantic
+pydantic-settings==2.14.2
+    # via commerce-creative-workflow-backend (backend/pyproject.toml)
+python-dotenv==1.2.4
+    # via
+    #   pydantic-settings
+    #   uvicorn
+python-multipart==0.0.32
+    # via commerce-creative-workflow-backend (backend/pyproject.toml)
+pyyaml==6.0.3
+    # via uvicorn
+redis==6.4.0
+    # via
+    #   commerce-creative-workflow-backend (backend/pyproject.toml)
+    #   dramatiq
+requests==2.34.2
+    # via cos-python-sdk-v5
+six==1.17.0
+    # via cos-python-sdk-v5
+sqlalchemy==2.0.51
+    # via
+    #   commerce-creative-workflow-backend (backend/pyproject.toml)
+    #   alembic
+starlette==1.10.0
+    # via fastapi
+structlog==25.5.0
+    # via commerce-creative-workflow-backend (backend/pyproject.toml)
+typing-extensions==4.16.0
+    # via
+    #   alembic
+    #   anyio
+    #   fastapi
+    #   psycopg
+    #   pydantic
+    #   pydantic-core
+    #   sqlalchemy
+    #   starlette
+    #   typing-inspection
+typing-inspection==0.4.4
+    # via
+    #   fastapi
+    #   pydantic
+    #   pydantic-settings
+urllib3==2.8.0
+    # via requests
+uvicorn==0.51.0
+    # via commerce-creative-workflow-backend (backend/pyproject.toml)
+uvloop==0.23.0
+    # via uvicorn
+watchfiles==1.3.0
+    # via uvicorn
+websockets==17.4
+    # via uvicorn
+xmltodict==1.0.4
+    # via cos-python-sdk-v5

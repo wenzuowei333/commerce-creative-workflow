@@ -1,0 +1,642 @@
+{
+  "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+  "items": [
+    {
+      "target": "backend/alembic.ini",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/alembic/env.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/alembic/versions/dc09848397a8_initial_schema.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/__init__.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/api/__init__.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/api/analysis.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/api/assets.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/api/auth.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/api/common.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/api/dependencies.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/api/downloads.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/api/generation.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/api/history.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/api/products.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/api/prompts.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/api/results.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/api/serializers.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/api/system.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/api/templates.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/config.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/core/__init__.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/core/errors.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/db.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/domain/__init__.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/domain/generation.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/domain/tasks.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/main.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/media.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/metrics.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/models.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/ops.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/providers.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/queueing.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/security.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/services/__init__.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/services/generation.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/services/generation_batches.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/services/generation_events.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/services/generation_execution.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/services/generation_limits.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/services/generation_payloads.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/services/generation_recovery.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/services/generation_revisions.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/workers/__init__.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/app/workers/tasks.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/pyproject.toml",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/tests/__init__.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/tests/conftest.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/tests/support.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/tests/test_api_auth_products.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/tests/test_assets.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/tests/test_config.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/tests/test_errors.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/tests/test_feature_flags.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/tests/test_generation.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/tests/test_generation_plan.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/tests/test_models.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/tests/test_product_workspace.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/tests/test_provider_contract.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/tests/test_results_templates_history.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/tests/test_task_state.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "backend/tests/test_workflows.py",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/e2e/workflow.spec.ts",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/index.html",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/package-lock.json",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/package.json",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/playwright.config.ts",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/App.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/api/client.test.ts",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/api/client.ts",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/components/AppShell.module.css",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/components/AppShell.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/system/api.ts",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/workbench/AnalysisStep.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/workbench/AssetStep.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/workbench/GenerationGallery.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/workbench/GenerationProgress.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/workbench/GenerationStep.module.css",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/workbench/GenerationStep.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/workbench/NewProductDialog.module.css",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/workbench/NewProductDialog.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/workbench/PromptDirectionEditor.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/workbench/PromptSetup.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/workbench/PromptStep.module.css",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/workbench/PromptStep.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/workbench/api.ts",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/workbench/steps.test.ts",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/workbench/steps.ts",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/features/workbench/useGenerationBatch.ts",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/main.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/pages/AssetsPage.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/pages/HistoryPage.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/pages/LibraryPages.module.css",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/pages/LoginPage.module.css",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/pages/LoginPage.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/pages/TemplatesPage.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/pages/WorkbenchPage.module.css",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/pages/WorkbenchPage.tsx",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/styles/global.css",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/test-setup.ts",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/types.ts",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/src/vite-env.d.ts",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/tsconfig.app.json",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/tsconfig.json",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/tsconfig.node.json",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    },
+    {
+      "target": "frontend/vite.config.ts",
+      "source_commit": "e11cb3ee99d7bd122ee7ae2b5aa3a0c37e011c27",
+      "symbols": null,
+      "action": "copy_sanitize"
+    }
+  ],
+  "note": "Source archive is not included. Non-runtime excerpts are marked. New adaptations are described separately."
+}

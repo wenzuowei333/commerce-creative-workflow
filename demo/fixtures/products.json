@@ -1,0 +1,17 @@
+{
+  "synthetic": true,
+  "products": [
+    {
+      "name": "虚构青绿随行杯",
+      "sku": "DEMO-CUP-001",
+      "brand": "DEMO LAB",
+      "kind": "cup"
+    },
+    {
+      "name": "虚构桌面收纳盒",
+      "sku": "DEMO-BOX-001",
+      "brand": "DEMO LAB",
+      "kind": "box"
+    }
+  ]
+}

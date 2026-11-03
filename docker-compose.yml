@@ -1,0 +1,49 @@
+name: portfolio-creative-demo
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: creative_demo
+      POSTGRES_USER: portfolio_demo
+      POSTGRES_PASSWORD: local-demo-only
+    ports:
+      - "127.0.0.1:25433:5432"
+    volumes:
+      - demo_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U portfolio_demo -d creative_demo"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "no"]
+    ports:
+      - "127.0.0.1:26379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  seed:
+    profiles: ["tools"]
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      ENVIRONMENT: demo
+      DATABASE_URL: postgresql+psycopg://portfolio_demo:local-demo-only@postgres:5432/creative_demo
+      AI_MODE: mock
+      REDIS_URL: redis://redis:6379/0
+      MEDIA_ROOT: /workspace/runtime/media
+      MEDIA_BACKEND: local
+      FEATURE_LIVE_PROVIDER: "false"
+      FEATURE_COS_MEDIA: "false"
+    command: ["sh", "-c", "alembic upgrade head && python -m demo.seed"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./runtime:/workspace/runtime
+volumes:
+  demo_postgres:

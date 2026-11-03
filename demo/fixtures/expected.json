@@ -1,0 +1,10 @@
+{
+  "products": 2,
+  "reference_assets": 8,
+  "mock_sample_files": 5,
+  "owner": "demo_admin",
+  "other_user": "demo_other",
+  "generation_batches": 0,
+  "generation_items": 0,
+  "note": "五张Mock样例仅为磁盘素材，没有预置成已执行批次；完整流程在阶段四运行。"
+}

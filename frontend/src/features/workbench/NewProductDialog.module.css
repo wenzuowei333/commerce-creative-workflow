@@ -1,0 +1,44 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgb(20 34 32 / 45%);
+  z-index: 100;
+}
+
+.dialog {
+  width: min(460px, 100%);
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+}
+
+.dialog h2 {
+  margin: 0 0 20px;
+  font-size: 20px;
+}
+
+.form {
+  display: grid;
+  gap: 15px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 5px;
+}
+
+.error {
+  padding: 12px;
+  color: var(--red);
+  background: #fcedeb;
+  border: 1px solid #efc7c3;
+  border-radius: var(--radius);
+  font-size: 13px;
+}
