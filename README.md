@@ -1,5 +1,7 @@
 # 商品多模态策划与可靠生图工作流
 
+[![Mock acceptance](https://github.com/wenzuowei333/commerce-creative-workflow/actions/workflows/ci.yml/badge.svg)](https://github.com/wenzuowei333/commerce-creative-workflow/actions/workflows/ci.yml) · [v0.1.0-showcase](https://github.com/wenzuowei333/commerce-creative-workflow/releases/tag/v0.1.0-showcase) · [作者主页](https://github.com/wenzuowei333)
+
 把商品素材、识图确认、视觉策划和逐图生成串成可恢复的人工确认工作流。
 
 **个人职责：原项目独立全栈开发，负责需求梳理、系统设计、前后端实现与部署。** 本仓库仅展示其中可核验的工作流切片；职责源于项目经历自述，源实现与本次展示适配分开记录。
@@ -55,12 +57,22 @@ uv pip install -r backend/requirements-dev.lock
 .venv/bin/python demo/run_checks.py
 ```
 
-前述命令执行后端测试，需要专用测试端口空闲；完整离线运行策略、浏览器与空卷复现入口见 [evaluation.md](docs/evaluation.md)。不声称首次下载“五分钟启动”。远程 GitHub Actions 尚未运行，本地验证入口已通过。
+前述命令执行后端测试，需要专用测试端口空闲；完整离线运行策略、浏览器与空卷复现入口见 [evaluation.md](docs/evaluation.md)。不声称首次下载“五分钟启动”。GitHub Actions 状态见页首徽章；各次运行的实际结果与过滤摘要见 Actions。本地历史验收与远程执行分别记录。
 
 ## 版本、数据与许可
 
-这是脱敏展示候选，当前保留在本地／私有范围，尚未公开 GitHub。源快照、逐字复用／展示适配与后续未同步能力见 [版本边界](docs/version-scope.md)。
+这是用于招聘展示的脱敏切片，公开源码、合成数据、设计说明与 Mock 演示。源快照、逐字复用／展示适配与后续未同步能力见 [版本边界](docs/version-scope.md)。
 
 本版没有完整依赖哈希失效图、混合检索或自主 Agent 规划。识图／策划／修订为同步阶段，初始批量生图通过队列执行；租约不能保证外部模型调用和收费严格一次。
 
-数据、账号与商品均为固定合成样本，参考图与 Mock 输出为程序素材，见 [脱敏记录](docs/redaction.md)、[素材来源](demo/ASSET_SOURCES.md)。上游未携带 LICENSE/COPYING/NOTICE；未额外授予开源许可。依赖保留各自许可，详见 [来源与许可边界](docs/licensing.md) 和 [第三方声明](THIRD_PARTY_NOTICES.md)。公开权属确认与正式发布留待后续处理。
+数据、账号与商品均为固定合成样本，参考图与 Mock 输出为程序素材，见 [脱敏记录](docs/redaction.md)、[素材来源](demo/ASSET_SOURCES.md)。上游未携带 LICENSE/COPYING/NOTICE；未额外授予开源许可。依赖保留各自许可，详见 [来源与许可边界](docs/licensing.md) 和 [第三方声明](THIRD_PARTY_NOTICES.md)。本次发布保留原有权利，未新增开源许可证；公开可读不等于授予任意再分发许可。
+
+## 发布与复现
+
+```sh
+git clone https://github.com/wenzuowei333/commerce-creative-workflow.git
+cd commerce-creative-workflow
+git checkout v0.1.0-showcase
+```
+
+[发布范围与验证方式](docs/publication.md) · [下载录屏](https://github.com/wenzuowei333/commerce-creative-workflow/releases/download/v0.1.0-showcase/demo.mp4)。录屏与测试为 Mock 工作流证据，不代表真实模型质量。
