@@ -1,3 +1,5 @@
+> 历史记录：本文描述 v0.1.0-showcase。当前完整项目请查看 [模块导航](modules.md)、[页面截图](screenshots.md) 和 [本轮验证](validation.md)。
+
 # 架构与关键时序
 
 本版把商品事实确认、视觉策划确认和批量生成分开。识图、策划与修订是同步阶段；只有初始逐图生成通过 Redis/Dramatiq。展示部署由 React 同源页面、FastAPI、独立 Worker、恢复进程、PostgreSQL、Redis 与本地媒体卷组成。

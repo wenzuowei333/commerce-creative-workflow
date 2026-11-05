@@ -1,0 +1,11 @@
+[Unit]
+Description=Commerce Image Studio daily cleanup and backup
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/image-studio
+ExecStart=/bin/bash -lc './scripts/cleanup.sh && ./scripts/backup.sh'
+User=root
+Group=root

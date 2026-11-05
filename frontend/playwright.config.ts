@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 
 const baseURL = process.env.E2E_BASE_URL || "http://127.0.0.1:18140";
 const target = new URL(baseURL);
-if (target.hostname !== "127.0.0.1" || !["18140", "18160"].includes(target.port)) {
+if (target.hostname !== "127.0.0.1" || !["18140", "18160", "18220", "18221"].includes(target.port)) {
   throw new Error("Browser checks only target the dedicated local stage-four demo on port 18140");
 }
 

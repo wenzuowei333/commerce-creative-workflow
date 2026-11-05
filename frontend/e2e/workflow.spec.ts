@@ -40,7 +40,7 @@ async function prepare(page: Page, label: string) {
 test.beforeEach(async ({ context }) => {
   await context.route("**/*", async route => {
     const url = new URL(route.request().url());
-    if (["data:", "blob:", "about:"].includes(url.protocol) || (url.hostname === "127.0.0.1" && ["18140", "18160"].includes(url.port))) {
+    if (["data:", "blob:", "about:"].includes(url.protocol) || (url.hostname === "127.0.0.1" && ["18140", "18160", "18220", "18221"].includes(url.port))) {
       await route.continue();
     } else {
       await route.abort();

@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-05",
+  "actual_application": true,
+  "synthetic_data_only": true,
+  "screenshots": [
+    {
+      "file": "docs/screenshots/01-workbench.png",
+      "page": "/image-studio/",
+      "label": "创作工作台",
+      "sha256": "d1706512e0f8f2d5c0eb0de83e178b3de902e107f17fc29ab106f335a27cc3af",
+      "viewport": [
+        1600,
+        1050
+      ]
+    },
+    {
+      "file": "docs/screenshots/02-assets.png",
+      "page": "/image-studio/assets",
+      "label": "商品素材库",
+      "sha256": "0f2b0398c103268e8d61c2d58c02f0c027ca8e37392b3e283da5024cbd0dadf7",
+      "viewport": [
+        1600,
+        1050
+      ]
+    },
+    {
+      "file": "docs/screenshots/03-templates.png",
+      "page": "/image-studio/templates",
+      "label": "模板库",
+      "sha256": "0146ed62c2423f27989daaee517c081fe53246c381328b40739ea7ba1eb8972a",
+      "viewport": [
+        1600,
+        1050
+      ]
+    },
+    {
+      "file": "docs/screenshots/04-history.png",
+      "page": "/image-studio/history",
+      "label": "生成历史",
+      "sha256": "8a20c00da62996d54585134b70c54a3f70a18c2255405ac24d23d911430a5fab",
+      "viewport": [
+        1600,
+        1050
+      ]
+    },
+    {
+      "file": "docs/screenshots/05-analysis.png",
+      "page": "/image-studio?product=f6825681-e685-5662-972a-9c886d0e910e",
+      "label": "商品识别与人工确认",
+      "sha256": "a4ed9b1781e8bb8d0d3c2793848a38ad0bbb4245e86afb9d944258b5def8f7a9",
+      "viewport": [
+        1600,
+        1050
+      ]
+    },
+    {
+      "file": "docs/screenshots/06-prompt-plan.png",
+      "page": "/image-studio?product=f6825681-e685-5662-972a-9c886d0e910e",
+      "label": "多图策划与提示词",
+      "sha256": "5e758a83cce85bb800632f647586edc143e542a36eb3f04d4d76df4c392554ef",
+      "viewport": [
+        1600,
+        1050
+      ]
+    },
+    {
+      "file": "docs/screenshots/07-results.png",
+      "page": "/image-studio?product=f6825681-e685-5662-972a-9c886d0e910e",
+      "label": "批量结果与逐图操作",
+      "sha256": "6b0ce1229690d0bd8f323903b375129715cc2ea5bfb52fd06819808c1f745835",
+      "viewport": [
+        1600,
+        1050
+      ]
+    },
+    {
+      "file": "docs/screenshots/08-hd-finalize.png",
+      "page": "/image-studio?product=f6825681-e685-5662-972a-9c886d0e910e",
+      "label": "高清定稿版本（Mock）",
+      "sha256": "449a7ac2bb50ca4bc56d27d1104ed9a0f3bcbe85cfa09753d1aec37368a70aa6",
+      "viewport": [
+        1600,
+        1050
+      ]
+    }
+  ]
+}

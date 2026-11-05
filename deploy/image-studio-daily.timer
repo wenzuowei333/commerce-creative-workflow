@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Commerce Image Studio maintenance every day
+
+[Timer]
+OnCalendar=*-*-* 03:15:00
+Persistent=true
+RandomizedDelaySec=10m
+Unit=image-studio-daily.service
+
+[Install]
+WantedBy=timers.target

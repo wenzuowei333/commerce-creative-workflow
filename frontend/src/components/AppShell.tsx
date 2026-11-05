@@ -45,8 +45,8 @@ export function AppShell({ username, onLogout }: Props) {
             <Sparkles size={20} />
           </div>
           <div>
-            <strong>商品视觉工作流演示</strong>
-            <span>合成商品 · Mock 工作流</span>
+            <strong>商品多模态创作工作台</strong>
+            <span>合成商品 · Mock 演示</span>
           </div>
         </div>
         <nav className={styles.nav} aria-label="主导航">

@@ -1,3 +1,5 @@
+> 历史记录：本文描述 v0.1.0-showcase。当前完整项目请查看 [模块导航](modules.md)、[页面截图](screenshots.md) 和 [本轮验证](validation.md)。
+
 # 招聘展示发布
 
 发布版本：`v0.1.0-showcase`；发布日期：2026-11-04。阶段六基线：`ee650e37de6b15d3f0586ccf39c8b0586d43672d`。

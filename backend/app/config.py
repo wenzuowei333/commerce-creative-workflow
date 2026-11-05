@@ -11,7 +11,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=None, extra="ignore", case_sensitive=False)
 
-    app_name: str = "商品视觉工作流演示"
+    app_name: str = "商品多模态创作工作台"
     app_base_path: str = "/image-studio"
     environment: str = "demo"
     database_url: str = "postgresql+psycopg://portfolio_demo:local-demo-only@127.0.0.1:25436/creative_demo"
@@ -49,8 +49,8 @@ class Settings(BaseSettings):
     feature_live_provider: bool = False
     feature_cos_media: bool = False
     feature_image_revisions: bool = True
-    feature_hd_finalize: bool = False
-    feature_templates: bool = False
+    feature_hd_finalize: bool = True
+    feature_templates: bool = True
 
     @model_validator(mode="after")
     def validate_demo_targets(self):
@@ -67,7 +67,7 @@ class Settings(BaseSettings):
             raise ValueError("Media must use this candidate's runtime/media directory")
         from urllib.parse import urlparse
         redis = urlparse(self.redis_url)
-        if redis.scheme != "redis" or redis.hostname not in {"127.0.0.1", "localhost", "redis"} or redis.port not in {6379, 26380, 26381}:
+        if redis.scheme != "redis" or redis.hostname not in {"127.0.0.1", "localhost", "redis"} or redis.port not in {6379, 26380, 26381, 18379}:
             raise ValueError("Redis must point to the local demo service")
         if self.generation_lease_seconds <= 0 or not 0 < self.generation_heartbeat_seconds < self.generation_lease_seconds:
             raise ValueError("Heartbeat must be shorter than a positive lease")

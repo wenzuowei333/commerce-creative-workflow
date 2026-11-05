@@ -46,7 +46,7 @@ export function LoginPage() {
           <div className={styles.mark} aria-hidden="true">
             <Sparkles size={22} />
           </div>
-          <h1>登录商品视觉工作流演示</h1>
+          <h1>登录商品多模态创作工作台</h1>
           <p>使用 demo_admin 或 demo_other，密码 LocalDemo-2026!。</p>
           <form className={styles.form} onSubmit={submit}>
             <label className="field-label">

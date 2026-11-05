@@ -1,78 +1,55 @@
-# 商品多模态策划与可靠生图工作流
+# 商品多模态创作工作台
 
-[![Mock acceptance](https://github.com/wenzuowei333/commerce-creative-workflow/actions/workflows/ci.yml/badge.svg)](https://github.com/wenzuowei333/commerce-creative-workflow/actions/workflows/ci.yml) · [v0.1.0-showcase](https://github.com/wenzuowei333/commerce-creative-workflow/releases/tag/v0.1.0-showcase) · [作者主页](https://github.com/wenzuowei333)
+完整应用脱敏展示版：商品档案、素材库、识别与人工确认、多图策划、异步生成、局部重试、图片修订、高清定稿、模板复用、历史检索和下载均保留。
 
-把商品素材、识图确认、视觉策划和逐图生成串成可恢复的人工确认工作流。
+[页面截图](docs/screenshots.md) · [功能与源码导航](docs/modules.md) · [快速启动](#快速启动) · [版本与验证](docs/validation.md) · [v0.2.0-full-project](https://github.com/wenzuowei333/commerce-creative-workflow/releases/tag/v0.2.0-full-project)
 
-**个人职责：原项目独立全栈开发，负责需求梳理、系统设计、前后端实现与部署。** 本仓库仅展示其中可核验的工作流切片；职责源于项目经历自述，源实现与本次展示适配分开记录。
+![完整创作工作台](docs/screenshots/01-workbench.png)
 
-`Python` · `FastAPI` · `PostgreSQL` · `React / TypeScript` · `Redis / Dramatiq` · `SSE`
+## 项目覆盖
 
-![实际运行界面：合成数据与 Mock 模型](docs/assets/overview.png)
+| 模块 | 内容 | 源码 |
+|---|---|---|
+| 商品与素材 | 多商品档案、图片上传、主图与角度、回收站 | `backend/app/api/products.py`、`assets.py`，`frontend/src/pages/AssetsPage.tsx` |
+| 商品识别 | 参考图上下文、结构化商品信息、风险项与人工确认 | `backend/app/api/analysis.py`，`frontend/src/features/workbench/AnalysisStep.tsx` |
+| 视觉策划 | 多图方向、提示词、人工修改与确认 | `backend/app/api/prompts.py`，`PromptStep.tsx` |
+| 异步生成 | PostgreSQL 状态、Redis/Dramatiq、进度、SSE、租约恢复与单项重试 | `backend/app/services/generation*.py`、`workers/` |
+| 结果编辑 | 逐图修订、高清定稿、版本关系、图片选择与下载 | `backend/app/api/results.py`、`downloads.py` |
+| 模板 | 保存策划为模板、变量替换与应用 | `backend/app/api/templates.py`，`frontend/src/pages/TemplatesPage.tsx` |
+| 历史 | 按商品和任务状态查询、结果回看与刷新恢复 | `backend/app/api/history.py`，`HistoryPage.tsx` |
+| 工程配套 | 登录、CSRF、幂等、限额、指标、备份恢复及部署模板 | `security.py`、`ops.py`、`scripts/`、`deploy/` |
 
-▶ **[观看 约 80 秒实际操作录屏](docs/assets/demo.mp4)** · [分镜与字幕](docs/demo-script.md) · [90 秒／5 分钟面试讲解](docs/interview-guide.md)
+![生成结果与逐图操作](docs/screenshots/07-results.png)
 
-录屏由本候选业务代码在独立本机环境运行产生，按实际时间录制，只增加讲解字幕。模型响应和图片均为 Mock/程序合成；页面状态来自 API、数据库和独立 Worker。视频不是模型效果评测。
+![素材库](docs/screenshots/02-assets.png)
 
-## 三个可复核的技术点
+更多实际页面见 **[页面截图集](docs/screenshots.md)**。截图只使用虚构商品与程序绘制的测试素材；图片输出明确为 Mock，未冒充真实生图质量。
 
-| 技术点 | 直接证据 |
-|---|---|
-| 人工确认与版本关联是后端约束 | [实现](backend/app/api/analysis.py#L105) · [复现测试](checks/test_workflow_postgres.py#L48) |
-| 幂等批次与仅失败项重试 | [实现](backend/app/services/generation_batches.py#L197) · [复现测试](checks/test_workflow_postgres.py#L109) |
-| 队列可重复投递，结果写入须持有租约 | [实现](backend/app/services/generation_execution.py#L142) · [复现测试](checks/test_workflow_postgres.py#L222) |
+## 快速启动
 
-[架构与关键时序](docs/architecture.md) · [三个设计取舍](docs/design-decisions.md) · [简历主张与证据](docs/resume-evidence.md)
-
-## 启动与演示
-
-需要 Docker Engine、Compose 2.24.4+；首次构建需要访问依赖源，依赖镜像已锁定内容摘要。在项目根目录执行：
-
-```sh
-docker compose --profile app up -d --build api worker recovery --wait
-```
-
-打开 **http://127.0.0.1:18140/image-studio/**。首次启动自动执行迁移与合成种子；已有工作流数据会保留。请先确保默认演示端口未占用；另建 Compose 项目时也需分别覆盖宿主机端口。
-
-| 演示账号 | 范围 |
-|---|---|
-| demo_admin | 两个虚构商品、各四张参考图 |
-| demo_other | 空商品库；不能读取管理员素材、批次、事件、图片 |
-
-统一演示密码：`LocalDemo-2026!`，仅用于本机隔离环境。停止：`docker compose --profile app stop`。恢复与删除专用数据卷的区别、开发方式及端口见 [完整运行手册](docs/runbook.md)。
-
-推荐路径：随行杯四张参考图 → 识图 → 保留未知材质并人工确认 → 5 张策划并确认 → 第 3 张首次失败场景 → 4+1 → 刷新 → 仅重试失败项 → 5 张完成。
-
-[正常／失败场景与预期](docs/demo-scenarios.md) 说明每一步输入、操作和结果判定，不用 HTTP 200 代替业务成功。
-
-## 已实际验证
-
-2026-11-03 阶段五：**42 项源回归 + 21 项 PostgreSQL/Redis 集成 + 7 项前端测试，另有 3 组浏览器用例，最终无失败或跳过。** 已通过干净检出、新数据卷、重复种子和再次新卷重建。阶段六只新增展示文档与媒体，业务实现保持阶段五版本；录屏路径另外实际执行。
-
-[可携带的脱敏验收摘要](docs/assets/acceptance-summary.json) · [测试口径与命令](docs/evaluation.md) · [阶段五详细说明](docs/phase5-acceptance.md)
-
-```sh
-uv venv --python 3.12
-uv pip install -r backend/requirements-dev.lock
-.venv/bin/python demo/run_checks.py
-```
-
-前述命令执行后端测试，需要专用测试端口空闲；完整离线运行策略、浏览器与空卷复现入口见 [evaluation.md](docs/evaluation.md)。不声称首次下载“五分钟启动”。GitHub Actions 状态见页首徽章；各次运行的实际结果与过滤摘要见 Actions。本地历史验收与远程执行分别记录。
-
-## 版本、数据与许可
-
-这是用于招聘展示的脱敏切片，公开源码、合成数据、设计说明与 Mock 演示。源快照、逐字复用／展示适配与后续未同步能力见 [版本边界](docs/version-scope.md)。
-
-本版没有完整依赖哈希失效图、混合检索或自主 Agent 规划。识图／策划／修订为同步阶段，初始批量生图通过队列执行；租约不能保证外部模型调用和收费严格一次。
-
-数据、账号与商品均为固定合成样本，参考图与 Mock 输出为程序素材，见 [脱敏记录](docs/redaction.md)、[素材来源](demo/ASSET_SOURCES.md)。上游未携带 LICENSE/COPYING/NOTICE；未额外授予开源许可。依赖保留各自许可，详见 [来源与许可边界](docs/licensing.md) 和 [第三方声明](THIRD_PARTY_NOTICES.md)。本次发布保留原有权利，未新增开源许可证；公开可读不等于授予任意再分发许可。
-
-## 发布与复现
-
-```sh
+```bash
 git clone https://github.com/wenzuowei333/commerce-creative-workflow.git
 cd commerce-creative-workflow
-git checkout v0.1.0-showcase
+docker compose --profile app up -d --build --wait
 ```
 
-[发布范围与验证方式](docs/publication.md) · [下载录屏](https://github.com/wenzuowei333/commerce-creative-workflow/releases/download/v0.1.0-showcase/demo.mp4)。录屏与测试为 Mock 工作流证据，不代表真实模型质量。
+打开 **http://127.0.0.1:18140/image-studio/**。账号 `demo_admin`，密码 `LocalDemo-2026!`；`demo_other` 是相同密码的隔离账号。
+
+默认使用 PostgreSQL、Redis、独立 Dramatiq Worker、本地媒体和 Mock Provider。包含两件虚构商品、8 张参考图；新建数据库不预置“已经执行成功”的批次。进入工作台后可完成识别、确认、策划、生成、只重试失败图、修订、高清定稿、模板保存及历史查看。
+
+```bash
+# 日常关闭；加 -v 才清空本演示专用卷
+docker compose --profile app down
+```
+
+前端构建后由 FastAPI 在 `/image-studio/` 提供完整应用。开发服务器可使用 `VITE_DEMO_API_TARGET` 指定本机 API；刷新复现检查以构建后的入口为准。
+
+## 工程与版本
+
+FastAPI / SQLAlchemy / Alembic / PostgreSQL / Redis / Dramatiq；React / TypeScript / Vite / TanStack Query。主流程和工程能力保留，模板与高清定稿在本版默认启用；补回部署及维护工具，延续此前已验收的状态恢复、权限隔离和旧 Worker 结果保护修正。
+
+COS、外部模型适配器及生产就绪检查的源码保留；演示配置不接入实际云桶或付费模型。Mock 用于验证产品行为和工程机制，真实模型质量与生产统计需使用对应版本和独立证据。
+
+所选 GitHub 源快照早于后续本地维护版本，本版覆盖该快照的完整应用模块。旧版 `v0.1.0-showcase` 及其流程录屏保留；本版以 `v0.2.0-full-project` 和完整截图展示项目。
+
+[模块说明](docs/modules.md) · [源文件覆盖与变更](docs/source-coverage-full.json) · [依赖许可清单](docs/dependency-licenses-full.json)。保留原有权利与第三方许可，没有新增项目开源许可。
